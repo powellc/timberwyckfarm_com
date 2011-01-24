@@ -1,0 +1,129 @@
+body { 
+    font-family:'Myriad Pro', 'Helvetica Neue', 'Trebuchet MS', sans; 
+    font-size:0.9em;
+    text-shadow:0 0 1px white;}
+a {color:blue;}
+a:hover { color:maroon;}
+a:visited { color:#44a;}
+a img { text-decoration:none;}
+#container { margin:0 auto;}
+#user-menu p{ 
+    text-align:center; 
+    float:right; 
+    padding:0.3em 0 0.3em 0; }
+#logo {text-align:center;}
+#logo h1 { margin-bottom:0;}
+#logo h2 { text-align:center; }
+.left { text-align:left;}
+.right {text-align:right;}
+.cap { text-transform:capitalize; }
+.end { padding-bottom:2em; padding-top:1em;}
+.pages a#about, .blog a#blog, .vendors a#vendors, .markets a#markets{
+    background-color: #369;
+    color: #fff;}
+.urgent { color:red; font-weight:bold;}
+
+#menu ul {
+    font-size: 1.6em;
+    margin-left: 0;
+    padding-left: 0;
+    list-style-type: none;
+    text-align:center;}
+
+#menu a {
+    background-color: #036;
+    border-bottom: 1px solid #eee;
+    display: block;
+    padding: 8px;}
+
+#menu a:link, #menu a:visited {
+    color:white;
+    font-style:italic;
+    text-decoration: none;}
+
+#menu a:hover, #menu a.active {
+    background-color: #369;
+    color: #fff;}
+    
+#menu a:active {
+    background-color:white;
+    color:#369;}
+    
+#content h1 { margin-bottom:0.2em;}
+#content h3 { font-size:1.2em; padding:0; }
+#content h2.title { margin-bottom:0;}
+
+#vendor_list {}
+table, td {
+  border: 1px solid #84785e;
+  border-collapse: collapse;
+  padding: 4px;
+  margin: 1px;
+}
+
+#tweet { padding:5px; border:1px solid black; margin-bottom:10px; background:#eee; width:110px; }
+#tweet a { color:blue; background:#eee; display:inline; padding:2px;}
+#tweet a:link, #tweet a:visited { color:blue; } 
+#tweet a:hover, #tweet a:active { color:maroon; background:#eee;}
+
+table {
+}
+
+thead th {
+	background-color: #a24116;
+  border: 0;
+  color: #ffffff;  
+	padding: .75em;
+}
+
+tbody th {
+  border-top: 1px solid #84785e;
+  font-weight: normal;
+	padding-left: .75em;
+}
+
+tbody tr td {
+	padding: .75em;
+}
+
+tfoot td, tfoot th {
+  background-color: #a24116;
+  border-left: none;
+  border-top: 1px solid #84785e;
+  color: #ffffff;
+	padding: .75em;
+}
+
+caption {
+	text-align: left;
+	font-size: 100%;
+	padding: .75em;
+	color: #000;
+}
+
+/* ----- Changes odd row to fffce1 */
+
+tr.odd_row {
+	background-color: #fffce1;
+	color: #101011;
+}
+
+
+#post { padding:2em;}
+#sidebar h1 { font-size:14pt; color:#888; border-bottom:3px solid #ddd; }
+
+span.tag-1, span.tag-2, span.tag-3 { font-size:0.7em;}
+span.tag-4, span.tag-5, span.tag-6 { font-size:0.9em;}
+span.tag-7, span.tag-8, span.tag-9 { font-size:1.1em;}
+span.tag-10, span.tag-11, span.tag-12 { font-size:1.3em;}
+span.tag-13, span.tag-14, span.tag-15 { font-size:1.3em;}
+span.tag-16, span.tag-17, span.tag-18 { font-size:1.5em;}
+
+#footer { 
+    background:white;
+    color:black; 
+    padding:0.5em 1em 0.5em 1em;
+    text-align:center;}
+    
+#footer h1 { 
+    font-size: 1.1em;}
