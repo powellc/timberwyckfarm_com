@@ -1,0 +1,90 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides: FastCGI servers for Django
+# Required-Start: networking
+# Required-Stop: networking
+# Default-Start: 2 3 4 5
+# Default-Stop: S 0 1 6
+# Short-Description: Start FastCGI servers with Django.
+# Description: Django, in order to operate with FastCGI, must be started
+# in a very specific way with manage.py. This must be done
+# for each Django web server that has to run.
+### END INIT INFO
+
+export PYTHONPATH=/var/virtualenvs/castinefm/lib/python2.5/site-packages:/var/virtualenvs/castinefm/src/syncr:$PYTHONPATH
+
+DESC="FastCGI server for castinefm.com"
+SCRIPTNAME=/var/django/castinefm_org/castinefm_org
+
+. /lib/lsb/init-functions
+[ "${NETWORKING}" = "no" ] && exit 0
+
+PIDFILE="/tmp/castinefm_org.pid"
+SOCKET="/tmp/castinefm_org.sock"
+SERVERNAME="castinefm_org"
+METHOD="threaded"
+
+DAEMON=/usr/bin/python
+DAEMON_OPTS="/var/django/castinefm_org/manage.py runfcgi socket=$SOCKET pidfile=$PIDFILE method=$METHOD"
+RUN_AS_USER=www-data
+
+stop() {
+# kill current fcgi process if it exists
+if [ -f $PIDFILE ]; then
+    echo -n $"Stopping $SERVERNAME..."
+    kill `cat -- $PIDFILE`
+    rm -f -- $PIDFILE
+fi
+}
+
+start() { 
+if [ ! -f $PIDFILE ]; then
+    echo -n $"Starting $SERVERNAME..."
+    start-stop-daemon --start --user $RUN_AS_USER --pidfile $PIDFILE --exec $DAEMON -- $DAEMON_OPTS|| true
+    chmod a+w $SOCKET
+    echo 
+    RETVAL=$?
+else
+    echo $"$SERVERNAME is already running."
+fi
+}
+
+restart() {
+if [ -f $PIDFILE ]; then
+    stop
+else
+    echo "$SERVERNAME not running."
+fi
+
+start
+
+}
+RETVAL=0
+
+RETVAL=0
+
+case "$1" in
+start)
+start
+;;
+stop)
+stop
+;;
+restart)
+restart
+;;
+status)
+status_of_proc -p "$PIDFILE" $SERVERNAME && exit 0
+RETVAL=$?
+;;
+restart)
+stop
+start
+;;
+*)
+echo $"Usage: $0 {start|stop|restart|status}"
+exit 3
+;;
+esac
+
+exit $RETVAL
