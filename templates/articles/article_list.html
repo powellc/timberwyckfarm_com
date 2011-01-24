@@ -1,0 +1,14 @@
+{% extends 'articles/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Welcome' %}{% endblock %}
+
+{% block articles-content %}
+
+{% for article in page_obj.object_list %}
+<div class="grid_8 prefix_2 suffix_2">
+<h2 class="title">{% trans 'Welcome' %}{% ifnotequal paginator.num_pages 1 %}, {% trans 'page' %} {{ page_obj.number }}{% endifnotequal %}</h2>
+  {% include 'articles/_articles.html' %}
+</div>
+{% endfor %}
+{% endblock %}

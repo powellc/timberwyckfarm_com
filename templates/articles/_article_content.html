@@ -1,0 +1,33 @@
+{% load i18n thumbnail %}
+<div id="article-content" class="article">
+    <h2 class="title">{% trans article.title %}</h2>
+
+{% for att in article.attachments.all %}
+	{% if att.content_type_class == "image_png" %}
+	<p id="attachement-{{forloop.counter}}" class="attachment ct_{{ att.content_type_class }}">
+	<img src="{{att.attachment.url}}" />
+    </p>
+    {% else %}
+	{% if att.content_type_class == "image_jpeg" %}
+	<p id="attachement-{{forloop.counter}}" class="attachment ct_{{ att.content_type_class }}">
+    <a href="{{att.attachment.url }}"><img src="{% thumbnail att.attachment 300x300 %}" /></a>
+    </p>
+    {% endif %}
+    {% endif %}
+{% endfor %}
+
+    {{ article.rendered_content|safe }}
+</div>
+
+{% for att in article.attachments.all %}
+{% if forloop.first %}<div id="article-attachments" class="grid_8 prefix_2 suffix_2">
+    <h3>Attachments</h3>
+    <ul>{% endif %}
+        <li id="attachment-{{ forloop.counter }}" class="attachment ct_{{ att.content_type_class }}">
+            <a href="{{ att.attachment.url }}" class="attachment-link">{{ att.filename }}</a>
+            <span class="attachment-size">Size: {{ att.attachment.size|filesizeformat }}</span>
+        </li>
+    {% if forloop.last %}</ul>
+</div>{% endif %}
+{% endfor %}
+
