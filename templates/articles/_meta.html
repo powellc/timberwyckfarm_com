@@ -1,29 +1,6 @@
 {% load i18n humanize %}
 
-<div id="article-meta" class="grid_4">
-    <h4>Meta</h4>
-
-    <p><strong>{% trans 'Published' %}</strong>: {{ article.publish_date|naturalday }}</p>
-
-    <p><strong>{% trans 'Author' %}</strong>: <a href="{% url articles_by_author article.author.username %}" title="{% trans 'Read other articles by this author' %}">{{ article.author.get_name }}</a></p>
-
-    <p><strong>{% trans 'Comments' %}</strong>: <a href="#disqus_thread">&nbsp;</a></p>
-
-    <p><strong>{% trans 'Word Count' %}</strong>: {{ article.word_count|intcomma }}</p>
-
-    {% if article.get_next_article %}
-    <p>
-        <strong>{% trans 'Next' %}</strong>:
-        <a href="{{ article.get_next_article.get_absolute_url }}">{{ article.get_next_article.title }}</a>
-    </p>
-    {% endif %}
-
-    {% if article.get_previous_article %}
-    <p>
-        <strong>{% trans 'Previous' %}</strong>:
-        <a href="{{ article.get_previous_article.get_absolute_url }}">{{ article.get_previous_article.title }}</a>
-    </p>
-    {% endif %}
+<div id="article-meta" class="grid_8 prefix_2 suffix_2">
 
     {% if article.use_addthis_button and article.addthis_username %}
     <!-- AddThis Button BEGIN -->

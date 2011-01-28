@@ -1,6 +1,7 @@
-{% load i18n thumbnail %}
+{% load i18n humanize thumbnail %}
 <div id="article-content" class="article">
     <h2 class="title">{% trans article.title %}</h2>
+    <h3 class="dateline">{{ article.publish_date|naturalday }}</h3>
 
 {% for att in article.attachments.all %}
 	{% if att.content_type_class == "image_png" %}
@@ -10,7 +11,7 @@
     {% else %}
 	{% if att.content_type_class == "image_jpeg" %}
 	<p id="attachement-{{forloop.counter}}" class="attachment ct_{{ att.content_type_class }}">
-    <a href="{{att.attachment.url }}"><img src="{% thumbnail att.attachment 300x300 %}" /></a>
+    <a href="{{att.attachment.url }}"><img src="{% thumbnail att.attachment 620x0 %}" /></a>
     </p>
     {% endif %}
     {% endif %}
@@ -19,15 +20,18 @@
     {{ article.rendered_content|safe }}
 </div>
 
-{% for att in article.attachments.all %}
-{% if forloop.first %}<div id="article-attachments" class="grid_8 prefix_2 suffix_2">
-    <h3>Attachments</h3>
-    <ul>{% endif %}
-        <li id="attachment-{{ forloop.counter }}" class="attachment ct_{{ att.content_type_class }}">
-            <a href="{{ att.attachment.url }}" class="attachment-link">{{ att.filename }}</a>
-            <span class="attachment-size">Size: {{ att.attachment.size|filesizeformat }}</span>
-        </li>
-    {% if forloop.last %}</ul>
-</div>{% endif %}
-{% endfor %}
+<div id="article-nav" class="article-nav">
+    {% if article.get_next_article %}
+    <p class="nav" id="next-article">
+        <strong>{% trans 'Next' %}</strong>:
+        <a href="{{ article.get_next_article.get_absolute_url }}">{{ article.get_next_article.title }}</a>
+    </p>
+    {% endif %}
 
+    {% if article.get_previous_article %}
+    <p class="nav" id="prev-article">
+        <strong>{% trans 'Previous' %}</strong>:
+        <a href="{{ article.get_previous_article.get_absolute_url }}">{{ article.get_previous_article.title }}</a>
+    </p>
+    {% endif %}
+</div>
