@@ -3,3 +3,5 @@
 myutils
 *.sqlite3
 *.sqlite
+*.swo
+attach
