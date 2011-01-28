@@ -1,0 +1,20 @@
+python-dateutil==1.5
+python-memcached==1.45
+-e svn+http://typogrify.googlecode.com/svn/trunk@16#egg=typogrify-1.0-py2.5-dev_r16
+vobject==0.8.1c
+Django==1.2.1
+Markdown==2.0.3
+PIL==1.1.7
+Unipath==0.2.1
+Whoosh==1.0.0b20
+distribute==0.6.10
+django-debug-toolbar==0.8.3
+django-extensions==0.5
+django-haystack==1.0.1-final
+-e git://github.com/Fantomas42/django-sekh.git@adc1f9c1dfb3575e1d993a16ad75f2bbb020d998#egg=django_sekh-0.1-py2.5-dev
+docutils==0.7
+smartypants==1.6.0.3
+textile==2.1.4
+wsgiref==0.1.2
+xappy==0.5
+yolk==0.4.1
