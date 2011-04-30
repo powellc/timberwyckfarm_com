@@ -1,6 +1,23 @@
-{% load i18n %}
-    <dl class="article grid_2" id="article-{{article.id}}">
-	    <dt><a href="{{ article.get_absolute_url }}" title="{% trans 'Read this article' %}">{{ article.title }}</a></dt>
-	    <dt class="published quiet">{% trans 'Posted on' %} {{ article.publish_date|date:"F jS, Y" }}</dt>
-	    <dt class="byline quiet">{% trans 'by' %} <a href="{% url articles_by_author article.author.username %}" title="{% trans 'View articles posted by' %} {{ article.author.get_name }}">{{ article.author.get_name }}</a></dt>
-    </dl>
+{% load i18n thumbnail humanize typogrify %}
+	{% if article.attachments.all %}
+		{% for att in article.attachments.all %}
+			{% if att.content_type_class == "image_png" %}
+	<div class="image">
+	<p id="attachement-{{forloop.counter}}" class="attachment ct_{{ att.content_type_class }}"><a href="{{ article.get_absolute_url }}" title="{% trans 'Read this article' %}"><img src="{{att.attachment.url}}" /></a></p>
+	<h2 class="roll-title"><a href="{{ article.get_absolute_url }}" title="{% trans 'Read this article' %}">{{ article.title|typogrify }}</a></h2>
+	</div>
+    		{% else %}
+			{% if att.content_type_class == "image_jpeg" %}
+	<div class="image">
+	<p id="attachement-{{forloop.counter}}" class="attachment ct_{{ att.content_type_class }}"><a href="{{ article.get_absolute_url }}" title="{% trans 'Read this article' %}"><img src="{% thumbnail att.attachment 500x220 crop %}" /></a></p>
+    <h2 class="roll-title"><a href="{{ article.get_absolute_url }}" title="{% trans 'Read this article' %}">{{ article.title|typogrify }}</a></h2>
+	</div>
+			{% else %}
+	<h2><a href="{{ article.get_absolute_url }}" title="{% trans 'Read this article' %}">{{ article.title }}</a></h2>
+    		{% endif %}
+    		{% endif %}
+		{% endfor %}
+	{% else %}
+	<h2><a href="{{ article.get_absolute_url }}" title="{% trans 'Read this article' %}">{{ article.title }}</a></h2>
+	{% endif %}
+	<p class="published quiet">{{ article.publish_date|naturalday }}</p>

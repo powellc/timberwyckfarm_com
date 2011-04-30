@@ -29,8 +29,8 @@
 {% endifnotequal %}
 {% endif %}
 
-<div id="article-archives">
-    <h2 class="title">{% trans 'Article Archives' %}</h2>
+<div id="article-archives" class="grid_8 prefix_2 suffix_2">
+    <h3 class="title">{% trans 'Archives' %}</h3>
     {% get_article_archives as archives %}
     {% for year in archives %}
     {% if forloop.first %}<ul>{% endif %}

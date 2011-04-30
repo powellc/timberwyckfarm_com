@@ -2,7 +2,7 @@ body { font-family:'Merriweather', 'Georgia', serif; font-size:0.9em; color:#777
 
 a {color:#962020;}
 a:hover { color:maroon;}
-a:visited { color:#444;}
+a:visited { color:maroon;}
 a img { text-decoration:none; border:2px solid #444; }
 
 #logo { margin-top:3em; padding:0; width:500px; height:140px; background: url(../img/logo.png) no-repeat; text-indent: -9999px;}
@@ -20,13 +20,27 @@ h2.title {display:inline; }
 h3.dateline { display:inline; margin-left:1em; color:#444; font-size:0.9em; font-style:italic; }
 #article-content p { padding-top:1em; font-family: 'Droid Sans', arial, sans-serif; line-height:1.5em;}
 #article-attachments { clear:both; margin-top:6em; border-top:1px solid #444; }
-p.attachment { float:left; margin:0 1em 1em 0; }
+#article-content p.attachment { float:left; margin:0 1em 1em 0; }
 
-#article-nav {padding:3px; background:#444; }
+#article-archives ul { list-style:none }
+#article-archives ul.months li { display:inline; padding-left:10px; }
+
+#article-nav {padding:1px; background:#444; }
 p#next-article { float:right; }
 p#prev-article { float:left; }
 
-#article-meta { clear:both; }
+#article-meta { }
+#article-meta h4 { float:left; padding:0 1em 0 0.6em; }
+#article-meta p.tags { background:#eee; padding:0.3em;}
 
-
-dl.article { padding:1em; border:1px solid #444; }
+#articles { list-style:none; }
+#articles li{ padding:10px; margin:0em; }
+#articles li:after { content:"#"; text-align:center;}
+#articles h2 { font-size:26pt; padding:0; margin:0; }
+#articles p.attachment { min-height:200px; overflow:hidden;}
+#articles .image { position:relative; width:100%; }
+#articles p{ margin:0;}
+#articles .image h2 { font-size:20pt; position:absolute; width:400px; padding:10px; top:50px;  left:-10px; text-indent:-9999px; }
+#articles .image h2 a { color:white; padding:10px; line-height:1.5em;}
+#articles div.image:hover h2 { text-indent:0px; }
+#articles div.image:hover h2 a { text-indent:0px; background:rgb(0,0,0); background:rgba(0,0,0,0.7);}

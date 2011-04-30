@@ -1,48 +1,48 @@
 {% load article_tags %}
 <html>
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en-US" />
-	<meta name="keywords" content="timberwyck farm castine maine {% block meta-keywords %}{% endblock %}" />
-	<meta name="description" content="{% block meta-description %}{% endblock %}" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="language" content="en-US" />
+    <meta name="keywords" content="timberwyck farm castine maine {% block meta-keywords %}{% endblock %}" />
+    <meta name="description" content="{% block meta-description %}{% endblock %}" />
 
-	<title>{% block title %}Welcome{% endblock %} &#9728; Timberwyck Farm</title>
-	<link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-	<link href='{{MEDIA_URL}}css/960.css' rel='stylesheet' type='text/css'>
-	<link href='{{MEDIA_URL}}css/main.css' rel='stylesheet' type='text/css'>
-	
-	{% block extra-head %}{% endblock %}
+    <title>{% block title %}Welcome{% endblock %} &#9728; Timberwyck Farm</title>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href='{{MEDIA_URL}}css/960.css' rel='stylesheet' type='text/css'>
+    <link href='{{MEDIA_URL}}css/main.css' rel='stylesheet' type='text/css'>
+    
+    {% block extra-head %}{% endblock %}
 </head>
 
 <body>
-	<div class="container_12" id="logo">
-		<h1><a href="/">Timberwyck Farm</a></h1>
-		<h2>A small saltwater farm in Castine, Maine.</h2>
-	</div>
+    <div class="container_12" id="logo">
+        <h1><a href="/">Timberwyck Farm</a></h1>
+        <h2>A small saltwater farm in Castine, Maine.</h2>
+    </div>
 
-	<div class="container_12" id="">
-		<div class="grid_8 prefix_2 suffix_2">
-		<ul id="menu">
-			<li><a href="" class="active">Journal</a></li>
-			<li><a href="">Animals</a></li>
-			<li><a href="">Products</a></li>
-			<li><a href="">Farm Camp</a></li>
-			<li><a href="">About</a></li>
-		</ul>
-	</div>
-	</div>
+    <div class="container_12" id="">
+        <div class="grid_8 prefix_2 suffix_2">
+            <ul id="menu" class="{% block menu-class %}jr{% endblock %}">
+                <li><a class="jr" href="{% url articles_archive %}" class="active">Journal</a></li>
+                <li><a class="am" href="{% url fm-animal-list %}">Animals</a></li>
+                <li><a class="pr" href="{% url fm-product-list %}">Products</a></li>
+                <li><a class="cm" href="">Farm Camp</a></li>
+                <li><a class="ab" href="">About</a></li>
+            </ul>
+        </div>
+    </div>
   <div class="container_12" id="content">
-		{% block content %}{% endblock %}
-	</div>
+        {% block content %}{% endblock %}
+    </div>
 
-	{% block footer %}
-	<div class="container_12" id="footer">
-		<div class="grid_8 prefix_2 suffix_2">
-		<p>Copyright &copy; {% now "Y" %} Colin Powell. All rights reserved. | Site designed & built by <a href="http://onecardinal.com">One Cardinal</a></p>
-	</div>
-	</div>
-	{% endblock %}
+    {% block footer %}
+    <div class="container_12" id="footer">
+        <div class="grid_8 prefix_2 suffix_2">
+        <p>Copyright &copy; {% now "Y" %} Colin Powell. All rights reserved. | Site designed & built by <a href="http://onecardinal.com">One Cardinal</a></p>
+    </div>
+    </div>
+    {% endblock %}
 
 </body>
 
