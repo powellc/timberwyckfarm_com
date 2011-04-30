@@ -27,7 +27,8 @@ admin.autodiscover()
 urlpatterns += patterns('',
     #(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
     #(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
+    (r'^', include('farm.urls')),
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    (r'^admin/(.*)', admin.site.root),
+    (r'^admin/', include(admin.site.urls)),
     (r'^', include('articles.urls')),
 )
