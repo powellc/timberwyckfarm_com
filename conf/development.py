@@ -17,7 +17,7 @@ if DEBUG:
             'ENGINE': 'django.db.backends.sqlite3',
         },
     }
-    MEDIA_URL='http://127.0.0.1:8000/media/'
+    MEDIA_URL='http://demo.onec.me:8080/media/'
     MEDIA_ROOT= os.path.join(PROJECT_ROOT, 'media/')
 
 ADMIN_MEDIA_PREFIX=MEDIA_URL+'admin/'
@@ -32,8 +32,7 @@ VIRTUALENV="/home/powellc/.virtualenvs/twyck/lib/python2.5/site-packages"
 #Start up logging to the console
 
 logging.getLogger('').addHandler(CONSOLE_HANDLER)
-logging.getLogger('keyedcache').setLevel(logging.INFO)
-logging.info("Django Started")
+logging.debug("Django Started")
 
 RECAPTCHA_PUBLIC_KEY = ''
 RECAPTCHA_PRIVATE_KEY = ''

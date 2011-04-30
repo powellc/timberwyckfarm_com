@@ -92,8 +92,13 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'easy_thumbnails',
     'myutils',
+	'typogrify',
+    'attributes',
 
     'articles',
+	'farm',
+    'notes',
+    'photologue',
  )
 
 
