@@ -1,0 +1,713 @@
+[
+    {
+        "pk": 1, 
+        "model": "farm.farm", 
+        "fields": {
+            "town": "Castine", 
+            "lat_long": "", 
+            "description": "", 
+            "created": "2011-05-04 15:17:44", 
+            "title": "Timberwyck Farm", 
+            "zipcode": "04421", 
+            "modified": "2011-05-04 15:17:44", 
+            "phone": "207-326-1014", 
+            "state": "ME", 
+            "contact": "Colin Powell", 
+            "address": "432 The Shore Road", 
+            "active": true, 
+            "slug": "timberwyck-farm"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "farm.farm", 
+        "fields": {
+            "town": "Montville", 
+            "lat_long": "", 
+            "description": "", 
+            "created": "2011-05-04 15:18:25", 
+            "title": "Bean's Corner Farm", 
+            "zipcode": "04941", 
+            "modified": "2011-05-04 15:18:25", 
+            "phone": "207-342-4829", 
+            "state": "ME", 
+            "contact": "Mary Thompson", 
+            "address": "543 Center Road", 
+            "active": false, 
+            "slug": "beans-corner-farm"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "farm.farm", 
+        "fields": {
+            "town": "Penobscot", 
+            "lat_long": "", 
+            "description": "", 
+            "created": "2011-05-05 00:28:06", 
+            "title": "King Hill Farm", 
+            "zipcode": "04476", 
+            "modified": "2011-05-05 00:28:06", 
+            "phone": "207-326-9701", 
+            "state": "ME", 
+            "contact": "Jo Barrett", 
+            "address": "29 Faerie Kingdom Rd", 
+            "active": false, 
+            "slug": "king-hill-farm"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "farm.genus", 
+        "fields": {
+            "description": "", 
+            "technical_name": "Ovis", 
+            "slug": "sheep", 
+            "title": "Sheep"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "farm.genus", 
+        "fields": {
+            "description": "", 
+            "technical_name": "Capra", 
+            "slug": "goat", 
+            "title": "Goat"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "farm.genus", 
+        "fields": {
+            "description": "", 
+            "technical_name": "Sus", 
+            "slug": "pig", 
+            "title": "Pig"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "farm.genus", 
+        "fields": {
+            "description": "", 
+            "technical_name": "Gallus", 
+            "slug": "chicken", 
+            "title": "Chicken"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "farm.genus", 
+        "fields": {
+            "description": "", 
+            "technical_name": "Agelastes", 
+            "slug": "guineafowl", 
+            "title": "Guineafowl"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "farm.genus", 
+        "fields": {
+            "description": "", 
+            "technical_name": "Meleagris", 
+            "slug": "turkey", 
+            "title": "Turkey"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "farm.breed", 
+        "fields": {
+            "description": "", 
+            "genus": 3, 
+            "slug": "red-wattle", 
+            "title": "Red Wattle"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "farm.breed", 
+        "fields": {
+            "description": "", 
+            "genus": 3, 
+            "slug": "large-black", 
+            "title": "Large Black"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "farm.breed", 
+        "fields": {
+            "description": "", 
+            "genus": 3, 
+            "slug": "tamworth", 
+            "title": "Tamworth"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "farm.breed", 
+        "fields": {
+            "description": "", 
+            "genus": 1, 
+            "slug": "tunis", 
+            "title": "Tunis"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "farm.breed", 
+        "fields": {
+            "description": "", 
+            "genus": 2, 
+            "slug": "boer", 
+            "title": "Boer"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "farm.breed", 
+        "fields": {
+            "description": "", 
+            "genus": 2, 
+            "slug": "nubian", 
+            "title": "Nubian"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "farm.breed", 
+        "fields": {
+            "description": "", 
+            "genus": 2, 
+            "slug": "dwarf-nigerian", 
+            "title": "Dwarf Nigerian"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "farm.breed", 
+        "fields": {
+            "description": "", 
+            "genus": 1, 
+            "slug": "katahdin", 
+            "title": "Katahdin"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "farm.breed", 
+        "fields": {
+            "description": "", 
+            "genus": 6, 
+            "slug": "narragansett", 
+            "title": "Narragansett"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "farm.breed", 
+        "fields": {
+            "description": "", 
+            "genus": 3, 
+            "slug": "gloucestershire-old-spot", 
+            "title": "Gloucestershire Old Spot"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "farm.secondarybreed", 
+        "fields": {
+            "percentage": 25, 
+            "breed": 3, 
+            "object_id": 13, 
+            "content_type": 24
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "farm.secondarybreed", 
+        "fields": {
+            "percentage": 25, 
+            "breed": 10, 
+            "object_id": 13, 
+            "content_type": 24
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "farm.secondarybreed", 
+        "fields": {
+            "percentage": 33, 
+            "breed": 2, 
+            "object_id": 14, 
+            "content_type": 24
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "farm.secondarybreed", 
+        "fields": {
+            "percentage": 16, 
+            "breed": 3, 
+            "object_id": 14, 
+            "content_type": 24
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "farm.secondarybreed", 
+        "fields": {
+            "percentage": 16, 
+            "breed": 10, 
+            "object_id": 14, 
+            "content_type": 24
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "e04c0496cf424c90986c0a7af778fa5e", 
+            "created": "2011-05-04 15:28:18", 
+            "markup": "m", 
+            "description": "", 
+            "father": null, 
+            "modified": "2011-05-04 15:49:55", 
+            "photos": [], 
+            "sex": "F", 
+            "deathday": null, 
+            "birthday": null, 
+            "alt_location": "", 
+            "mother": null, 
+            "alt_origin": "", 
+            "birthtime": null, 
+            "origin_farm": 2, 
+            "primary_breed": 1, 
+            "slug": "gertrude", 
+            "name": "Gertrude"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "a57b704a17004072a08dc70a8d808779", 
+            "created": "2011-05-04 15:28:57", 
+            "markup": "m", 
+            "description": "", 
+            "father": null, 
+            "modified": "2011-05-04 15:49:55", 
+            "photos": [], 
+            "sex": "M", 
+            "deathday": null, 
+            "birthday": null, 
+            "alt_location": "", 
+            "mother": null, 
+            "alt_origin": "", 
+            "birthtime": null, 
+            "origin_farm": 2, 
+            "primary_breed": 1, 
+            "slug": "merriweather", 
+            "name": "Merriweather"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "fed57e0ffbcf45b38c72a59db8d0f475", 
+            "created": "2011-05-04 15:29:28", 
+            "markup": "m", 
+            "description": "", 
+            "father": 2, 
+            "modified": "2011-05-04 15:49:56", 
+            "photos": [], 
+            "sex": "M", 
+            "deathday": null, 
+            "birthday": "2011-04-23", 
+            "alt_location": "", 
+            "mother": 1, 
+            "alt_origin": "", 
+            "birthtime": "19:30:00", 
+            "origin_farm": 1, 
+            "primary_breed": 1, 
+            "slug": "fed57e0ffbcf45b38c72a59db8d0f475", 
+            "name": ""
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "efebf0a188644320ade7baf90a06b053", 
+            "created": "2011-05-04 15:30:17", 
+            "markup": "m", 
+            "description": "", 
+            "father": 2, 
+            "modified": "2011-05-04 15:49:56", 
+            "photos": [], 
+            "sex": "M", 
+            "deathday": null, 
+            "birthday": "2011-04-23", 
+            "alt_location": "", 
+            "mother": 1, 
+            "alt_origin": "", 
+            "birthtime": "19:30:00", 
+            "origin_farm": 1, 
+            "primary_breed": 1, 
+            "slug": "efebf0a188644320ade7baf90a06b053", 
+            "name": ""
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "bcb07537c3ed48488b6c345105ef5a51", 
+            "created": "2011-05-04 15:31:00", 
+            "markup": "m", 
+            "description": "", 
+            "father": 2, 
+            "modified": "2011-05-04 15:49:56", 
+            "photos": [], 
+            "sex": "M", 
+            "deathday": null, 
+            "birthday": "2011-04-23", 
+            "alt_location": "", 
+            "mother": 1, 
+            "alt_origin": "", 
+            "birthtime": "19:30:00", 
+            "origin_farm": 1, 
+            "primary_breed": 1, 
+            "slug": "bcb07537c3ed48488b6c345105ef5a51", 
+            "name": ""
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "0600c6a2d82e4a088736a4a16cd1e262", 
+            "created": "2011-05-04 15:31:41", 
+            "markup": "m", 
+            "description": "", 
+            "father": 2, 
+            "modified": "2011-05-04 15:49:57", 
+            "photos": [], 
+            "sex": "M", 
+            "deathday": null, 
+            "birthday": "2011-04-23", 
+            "alt_location": "", 
+            "mother": 1, 
+            "alt_origin": "", 
+            "birthtime": "19:30:00", 
+            "origin_farm": 1, 
+            "primary_breed": 1, 
+            "slug": "0600c6a2d82e4a088736a4a16cd1e262", 
+            "name": ""
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "2bc69371292d44818433e0ee80435b63", 
+            "created": "2011-05-04 15:32:31", 
+            "markup": "m", 
+            "description": "", 
+            "father": 2, 
+            "modified": "2011-05-04 15:49:57", 
+            "photos": [], 
+            "sex": "M", 
+            "deathday": "2011-04-25", 
+            "birthday": "2011-04-23", 
+            "alt_location": "", 
+            "mother": 1, 
+            "alt_origin": "", 
+            "birthtime": "19:30:00", 
+            "origin_farm": 1, 
+            "primary_breed": 1, 
+            "slug": "2bc69371292d44818433e0ee80435b63", 
+            "name": ""
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "a77b6fed156444dcba2095056bcb440f", 
+            "created": "2011-05-04 15:33:23", 
+            "markup": "m", 
+            "description": "", 
+            "father": 2, 
+            "modified": "2011-05-04 15:49:57", 
+            "photos": [], 
+            "sex": "F", 
+            "deathday": "2011-04-25", 
+            "birthday": "2011-04-23", 
+            "alt_location": "", 
+            "mother": 1, 
+            "alt_origin": "", 
+            "birthtime": "19:30:00", 
+            "origin_farm": 1, 
+            "primary_breed": 1, 
+            "slug": "a77b6fed156444dcba2095056bcb440f", 
+            "name": ""
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "c66ce68a09924fc8b92eba317880203b", 
+            "created": "2011-05-04 15:34:50", 
+            "markup": "m", 
+            "description": "", 
+            "father": 2, 
+            "modified": "2011-05-04 15:49:57", 
+            "photos": [], 
+            "sex": "F", 
+            "deathday": null, 
+            "birthday": "2011-04-23", 
+            "alt_location": "", 
+            "mother": 1, 
+            "alt_origin": "", 
+            "birthtime": "19:30:00", 
+            "origin_farm": 1, 
+            "primary_breed": 1, 
+            "slug": "c66ce68a09924fc8b92eba317880203b", 
+            "name": ""
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "55720d5eec484e5d9d060ba9648f9639", 
+            "created": "2011-05-04 15:36:01", 
+            "markup": "m", 
+            "description": "", 
+            "father": 2, 
+            "modified": "2011-05-04 15:49:57", 
+            "photos": [], 
+            "sex": "F", 
+            "deathday": null, 
+            "birthday": "2011-04-23", 
+            "alt_location": "", 
+            "mother": 1, 
+            "alt_origin": "", 
+            "birthtime": "19:30:00", 
+            "origin_farm": 1, 
+            "primary_breed": 1, 
+            "slug": "55720d5eec484e5d9d060ba9648f9639", 
+            "name": ""
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "c7515c645050431f84e6026cf2430305", 
+            "created": "2011-05-04 15:38:27", 
+            "markup": "m", 
+            "description": "", 
+            "father": 2, 
+            "modified": "2011-05-04 15:49:58", 
+            "photos": [], 
+            "sex": "F", 
+            "deathday": null, 
+            "birthday": "2011-04-23", 
+            "alt_location": "", 
+            "mother": 1, 
+            "alt_origin": "", 
+            "birthtime": "19:30:00", 
+            "origin_farm": 1, 
+            "primary_breed": 1, 
+            "slug": "c7515c645050431f84e6026cf2430305", 
+            "name": ""
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "0ddc1cdcef86476887e445149bd8921a", 
+            "created": "2011-05-04 16:01:50", 
+            "markup": "m", 
+            "description": "", 
+            "father": null, 
+            "modified": "2011-05-04 16:01:51", 
+            "photos": [], 
+            "sex": "F", 
+            "deathday": null, 
+            "birthday": null, 
+            "alt_location": "", 
+            "mother": null, 
+            "alt_origin": "Troy Staples of Penobscot, Maine", 
+            "birthtime": null, 
+            "origin_farm": null, 
+            "primary_breed": 4, 
+            "slug": "candace", 
+            "name": "Candace"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "c7d519a3b79d4259a7a5948e1076c7e1", 
+            "created": "2011-05-04 16:29:37", 
+            "markup": "m", 
+            "description": "", 
+            "father": null, 
+            "modified": "2011-05-04 16:29:38", 
+            "photos": [], 
+            "sex": "F", 
+            "deathday": null, 
+            "birthday": null, 
+            "alt_location": "", 
+            "mother": null, 
+            "alt_origin": "Unknown", 
+            "birthtime": null, 
+            "origin_farm": null, 
+            "primary_breed": 2, 
+            "slug": "willa", 
+            "name": "Willa"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "ebf17647187440dbbb09dfd312908a15", 
+            "created": "2011-05-04 16:31:48", 
+            "markup": "m", 
+            "description": "", 
+            "father": 2, 
+            "modified": "2011-05-04 22:58:56", 
+            "photos": [], 
+            "sex": "M", 
+            "deathday": null, 
+            "birthday": "2011-05-02", 
+            "alt_location": "", 
+            "mother": 13, 
+            "alt_origin": "", 
+            "birthtime": "05:00:00", 
+            "origin_farm": 1, 
+            "primary_breed": 1, 
+            "slug": "ebf17647187440dbbb09dfd312908a15", 
+            "name": ""
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "6865de9eba6640559452b8fe95f60f54", 
+            "created": "2011-05-04 16:35:10", 
+            "markup": "m", 
+            "description": "", 
+            "father": null, 
+            "modified": "2011-05-04 16:37:52", 
+            "photos": [
+                1
+            ], 
+            "sex": "F", 
+            "deathday": null, 
+            "birthday": "2011-05-03", 
+            "alt_location": "", 
+            "mother": 12, 
+            "alt_origin": "", 
+            "birthtime": "17:30:00", 
+            "origin_farm": 1, 
+            "primary_breed": 4, 
+            "slug": "6865de9eba6640559452b8fe95f60f54", 
+            "name": ""
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "2b95148ac483434cb8fc85fac294d0e5", 
+            "created": "2011-05-05 00:28:37", 
+            "markup": "m", 
+            "description": "", 
+            "father": null, 
+            "modified": "2011-05-05 00:28:38", 
+            "photos": [], 
+            "sex": "M", 
+            "deathday": null, 
+            "birthday": "2011-04-15", 
+            "alt_location": "", 
+            "mother": null, 
+            "alt_origin": "", 
+            "birthtime": null, 
+            "origin_farm": 3, 
+            "primary_breed": 8, 
+            "slug": "frank", 
+            "name": "Frank"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "farm.animal", 
+        "fields": {
+            "rendered_description": "", 
+            "current_farm": 1, 
+            "uuid": "b7d78957b5654ba98fca073cd09d5194", 
+            "created": "2011-05-05 00:30:16", 
+            "markup": "m", 
+            "description": "", 
+            "father": null, 
+            "modified": "2011-05-05 00:30:17", 
+            "photos": [], 
+            "sex": "F", 
+            "deathday": null, 
+            "birthday": "2011-04-15", 
+            "alt_location": "", 
+            "mother": null, 
+            "alt_origin": "", 
+            "birthtime": null, 
+            "origin_farm": 3, 
+            "primary_breed": 8, 
+            "slug": "zoey", 
+            "name": "Zoey"
+        }
+    }
+]
