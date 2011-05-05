@@ -91,7 +91,8 @@ INSTALLED_APPS = (
     'django_extensions',
     'debug_toolbar',
     'easy_thumbnails',
-    'myutils',
+    'onec_utils',
+    'markup_mixin',
 	'typogrify',
     'attributes',
 

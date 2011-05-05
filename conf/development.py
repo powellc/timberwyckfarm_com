@@ -17,7 +17,7 @@ if DEBUG:
             'ENGINE': 'django.db.backends.sqlite3',
         },
     }
-    MEDIA_URL='http://demo.onec.me:8080/media/'
+    MEDIA_URL='http://127.0.0.1:8000/media/'
     MEDIA_ROOT= os.path.join(PROJECT_ROOT, 'media/')
 
 ADMIN_MEDIA_PREFIX=MEDIA_URL+'admin/'

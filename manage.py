@@ -9,13 +9,13 @@ except ImportError:
     sys.stderr.write("Error: Can't find the file 'settings.py' in the directory containing %r. It appears you've customized things.\nYou'll have to run django-admin.py, passing it your settings.development module.\n(If the file settings.development.py does indeed exist, it's causing an ImportError somehow.)\n" % __file__)
     sys.exit(1)
 
-if settings.DEBUG == True:
+if settings.DEBUG == False:
     activate_this = "/var/lib/virtualenvs/twyck/bin/activate_this.py"
 else:
     if os.path.exists('/home/powellc'):
-        activate_this = "/home/powellc/.virtualenvs/twyck/bin/activate_this.py"
+        activate_this = "/home/powellc/Dropbox/.virtualenvs/twyck/bin/activate_this.py"
     else:
-        activate_this = "/Users/powellc/.virtualenvs/twyck/bin/activate_this.py"
+        activate_this = "/Users/powellc/Dropbox/.virtualenvs/twyck/bin/activate_this.py"
 execfile(activate_this, dict(__file__=activate_this))
 
 
