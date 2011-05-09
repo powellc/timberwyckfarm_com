@@ -1,0 +1,110 @@
+{% extends 'farm/base.html' %}
+{% load humanize typogrify truncatechars note_tags farm_tags %}
+
+{% block extra-head %}
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".birth-record").hide();
+	$(".note-form").hide();
+
+	$("li.trigger").click(function(){
+		$(this).toggleClass("active").next().slideToggle("slow");
+	});
+	$("p.trigger").click(function(){
+		$(this).toggleClass("active").next().slideToggle("slow");
+	});
+
+});
+</script>
+{% endblock %}
+
+{% block content %}
+
+<div id="animal-{{object.uuid}}" class="animal grid_8 prefix_2 suffix_2">
+  <div id="submenu">
+    <ul>
+    {% if user.is_authenticated %}
+    <li class="add-note"><a class="button black shoNoteWindow" href="#noteWindow">Add a note</a></li>
+  	<script type="text/javascript">
+			$('.showNoteWindow').openDOMWindow({height:280, width:280, anchoredClassName:'nnoteWindow', anchoredSelector:'.showNoteWindow', 
+							eventType:'click', draggable:0, loader:1, loaderImagePath:'animationProcessing.gif', loaderHeight:16, loaderWidth:17 }); 
+		</script>
+    <div id="noteWindow" style="display:none;" class="note-form uniForm">
+    <form action="" method="post">{% csrf_token %}
+      {{ note_form.as_p }}
+      <input type="submit" value="Create" />
+    </form>
+		<p class="alt" style="padding-left:10px;">Click outside the box to cancel.</p>
+    </div>
+    <li class="edit-animal"><a class="button black showAdminWindow" href="http://localhost:8000/admin/farm/animal/{{object.id}}/">Edit {{object.display_name}}</a></li>
+  	<script type="text/javascript">
+      $('.showAdminWindow').openDOMWindow({ height:500, width:900, positionType:'absolute', positionTop:50, eventType:'click', 
+                                                    positionLeft:50, windowSource:'iframe', windowPadding:0, loader:1, 
+                                                    loaderImagePath:'animationProcessing.gif', loaderHeight:16, loaderWidth:17 });
+		</script>
+    {% endif %}
+    </ul>
+  </div>
+  <h2>{{object.display_name}} ({{object.breed}})</h2>
+    <div class="info">
+        <h4>Basic info</h4>
+        <ul>
+            <li><em>Breed:</em>&nbsp;<a href="{% url fm-breed-detail object.primary_breed.genus.slug object.primary_breed.slug %}">{{object.breed.title}}</a></li>
+            <li><em>Sex:</em>&nbsp;{{object.get_sex_display}}</li>
+            {% if object.birthday %}<li><em>Age:</em>&nbsp;{{object.age}} old</li>{% endif %}
+            {% if object.dam%}<li><em>Dam:</em>&nbsp;<a href="{{object.dam.get_absolute_url}}">{{object.dam.name}}</a></li>{% endif %}
+            {% if object.sire%}<li><em>Sire:</em>&nbsp;<a href="{{object.sire.get_absolute_url}}">{{object.sire.name}}</a></li>{% endif %}
+            <li><em>ID:</em>&nbsp;{{object.uuid|truncate:10}}</li>
+            {% for a in object.animalattribute_set.all %}
+            <li><em>{{a.name}}:</em>&nbsp;{{a.value}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% if object.photos.all %}
+    <div class="box photos">
+    <h3 >Photos</h3>
+    {% for p in object.photos.all %}
+      <p><img src="{{p.get_thumbnail_url}}" alt="{{p}}" /></p>
+    {% endfor %}
+    </div>
+    {% endif %}
+
+    <div id="animal-description">
+        {{object.rendered_description|safe}}
+    </div>
+
+    {% if object.notes.all %}
+    <div class="notes">
+    <h3 >Notes</h3>
+	    {% note_list_for object %}
+    </div>
+    {% endif %}
+
+    {% if object.progeny %}
+    <h3>Offspring</h3>
+    <ul>
+      <li>Offspring: {{object.progeny.count}}</li>
+      <li>Pregnancies: {{object.births|length}}</li>
+    </ul>
+    <p class="trigger"><a class="button black" href="javascript:void(0);" >More information</a></p>
+
+    <div class="birth-record">
+    {% if object.sire_of%}
+      <h4>Sire of </h4>
+      {% child_table_for object %}
+    {% endif %}
+
+    {% if object.dam_of%}
+      <h4>Dam of </h4>
+      {% child_table_for object %}
+    {% endif %}
+    </div>
+    {% endif %}
+
+
+    
+</div>
+
+{% endblock %}

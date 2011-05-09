@@ -1,0 +1,16 @@
+{% extends 'farm/base.html' %}
+{% load humanize typogrify %}
+
+{% block content %}
+
+<div class="grid_8 prefix_2 suffix_2">
+<h2>Our animals</h2>
+
+<ul>
+{% for g in genus_list %}
+  <li><a href="{{g.get_absolute_url}}">{{g}}</a></li>
+{% endfor %}
+</ul>
+</div>
+
+{% endblock %}

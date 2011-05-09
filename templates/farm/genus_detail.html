@@ -1,0 +1,33 @@
+{% extends 'farm/base.html' %}
+{% load humanize typogrify truncatechars note_tags farm_tags %}
+
+{% block content %}
+
+<div id="genus-{{object.id}}" class="animal grid_8 prefix_2 suffix_2">
+  <div id="submenu">
+    <ul>
+    <li class="back"><a class="button red" href="{% url fm-genus-list %}">Back</a></li>
+    </ul>
+  </div>
+  <h2>{{object}}</h2>
+
+  {% for b in genus.breed_set.all %}
+  {% if b.animal_set.all %}
+  <div class="breed" id="{{b.genus}}">
+      <p><a href="{{b.get_absolute_url}}">{{b}}</a></p>
+      {% if b.animal_set.all %}
+      <ul class="animals">
+          {% for a in b.animal_set.all %}
+          {% if a.name %}
+          <li><a href="{{a.get_absolute_url}}">{{a.name}}</a></li>
+          {% endif %}
+          {% endfor %}
+      </ul>
+      {% endif %}
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+{% endblock %}
+

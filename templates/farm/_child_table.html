@@ -1,0 +1,14 @@
+{% load truncatechars %}
+    <table class="table2">
+        <thead><tr><th>Name/Desc</th><th>Birth date</th><th>Location</th><th>Unique ID</td></tr></thead>
+        <tbody>
+        {% for p in children %}
+        <tr>
+            <td><a href="{{p.get_absolute_url}}">{{p.get_sex_display}} {% if p.name %}{{p.name}}{% endif %}{{p.breed}}</a></td>
+            <td>{{p.birthday|date:"Y M j"}}</td>
+            <td>{{p.location}}</td>
+            <td>{{p.uuid|truncate:10}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
