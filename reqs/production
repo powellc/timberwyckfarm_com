@@ -13,8 +13,6 @@ django-typogrify==1.2.1
 django-uuidfield==0.2
 python-dateutil==2.0
 smartypants==1.6.0.3
-textile==2.1.5
-typogrify==1.2.1
 uuid==1.30
 wsgiref==0.1.2
 django-attributes==0.1.0
