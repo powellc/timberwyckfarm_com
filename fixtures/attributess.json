@@ -1,0 +1,46 @@
+[
+    {
+        "pk": 1, 
+        "model": "attributes.attributeoption", 
+        "fields": {
+            "validation": "attributes.utils.validation_integer", 
+            "sort_order": 1, 
+            "description": "Number of siblings", 
+            "error_message": "Must be a non-negative integer.", 
+            "name": "Siblings"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "attributes.attributeoption", 
+        "fields": {
+            "validation": "attributes.utils.validation_simple", 
+            "sort_order": 1, 
+            "description": "Hair color", 
+            "error_message": "Invalid Entry", 
+            "name": "color"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "attributes.attributeoption", 
+        "fields": {
+            "validation": "attributes.utils.validation_integer", 
+            "sort_order": 2, 
+            "description": "Wattles", 
+            "error_message": "Invalid Entry", 
+            "name": "wattles"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "attributes.attributeoption", 
+        "fields": {
+            "validation": "attributes.utils.validation_yesno", 
+            "sort_order": 1, 
+            "description": "Polled", 
+            "error_message": "Must be yes or no", 
+            "name": "polled"
+        }
+    }
+]

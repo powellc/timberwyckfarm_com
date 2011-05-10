@@ -1,0 +1,186 @@
+[
+    {
+        "pk": 8, 
+        "model": "photologue.photo", 
+        "fields": {
+            "view_count": 0, 
+            "title_slug": "willa-nursing-her-first-litter", 
+            "date_taken": "2011-05-10 10:40:51", 
+            "title": "Willa nursing her first litter", 
+            "image": "photologue/photos/willa-nursing.jpg", 
+            "tags": "willa, large-black, hog, pig, nursing, farrowing, birth, litter, piglets", 
+            "crop_from": "center", 
+            "effect": null, 
+            "caption": "Willa, hours after farrowing her first litter. She's a good mom and we only lost three of her piglets, leaving us with 7.", 
+            "is_public": true, 
+            "date_added": "2011-05-10 10:40:50"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "photologue.photo", 
+        "fields": {
+            "view_count": 0, 
+            "title_slug": "emmett-dn-buck", 
+            "date_taken": "2011-05-10 10:27:10", 
+            "title": "Emmett the DN Buck", 
+            "image": "photologue/photos/emmett-the-buck.jpg", 
+            "tags": "emmett, goat, dwarf-nigerian, buck", 
+            "crop_from": "center", 
+            "effect": null, 
+            "caption": "Emmett when he first came to our farm, all clean and not horny.", 
+            "is_public": true, 
+            "date_added": "2011-05-10 10:27:09"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "photologue.photo", 
+        "fields": {
+            "view_count": 0, 
+            "title_slug": "frank-with-child", 
+            "date_taken": "2011-05-10 10:02:04", 
+            "title": "Frank with a child", 
+            "image": "photologue/photos/frank-with-child.jpg", 
+            "tags": "frank, katahdin, sheep, lamb, shearing", 
+            "crop_from": "top", 
+            "effect": null, 
+            "caption": "Frank with a child at Castine's sheep shearing on the Common event.", 
+            "is_public": true, 
+            "date_added": "2011-05-10 10:02:04"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "photologue.photo", 
+        "fields": {
+            "view_count": 0, 
+            "title_slug": "merriweather-hog", 
+            "date_taken": "2011-05-09 23:59:04", 
+            "title": "Merriweather the hog", 
+            "image": "photologue/photos/DSC_3968.JPG", 
+            "tags": "merri, merriweather, hog, red-wattle, pig, ", 
+            "crop_from": "center", 
+            "effect": null, 
+            "caption": "Merriweather works on tilling up our mipas garden in the front yard.", 
+            "is_public": true, 
+            "date_added": "2011-05-09 23:59:02"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "photologue.photo", 
+        "fields": {
+            "view_count": 0, 
+            "title_slug": "gertrude", 
+            "date_taken": "2011-05-06 21:30:01", 
+            "title": "Gertrude", 
+            "image": "photologue/photos/DSC_4014.JPG", 
+            "tags": "gertrude, pig, red-wattle", 
+            "crop_from": "center", 
+            "effect": null, 
+            "caption": "Gertrude, a red wattle sow.", 
+            "is_public": true, 
+            "date_added": "2011-05-06 21:30:00"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "photologue.photo", 
+        "fields": {
+            "view_count": 0, 
+            "title_slug": "gertrude-her-first-litter", 
+            "date_taken": "2011-05-06 21:29:24", 
+            "title": "Gertrude with her first litter", 
+            "image": "photologue/photos/DSC_4009.JPG", 
+            "tags": "gertrude, pig, red-wattle, piglets", 
+            "crop_from": "center", 
+            "effect": null, 
+            "caption": "Gertrude enjoying a warm May day with her first litter of piglets.", 
+            "is_public": true, 
+            "date_added": "2011-05-06 21:29:22"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "photologue.photo", 
+        "fields": {
+            "view_count": 0, 
+            "title_slug": "candace-id-0ddc1cdcef", 
+            "date_taken": "2011-05-06 11:34:59", 
+            "title": "Candace ID: 0ddc1cdcef", 
+            "image": "photologue/photos/candace-sheep-0ddc1cdcef.jpg", 
+            "tags": "candace, sheep, tunis, 0ddc1cdcef, animal, mother", 
+            "crop_from": "bottom", 
+            "effect": null, 
+            "caption": "", 
+            "is_public": true, 
+            "date_added": "2011-05-06 11:34:59"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "photologue.photo", 
+        "fields": {
+            "view_count": 18, 
+            "title_slug": "lamb-candace-id-6865de9eb", 
+            "date_taken": "2011-05-04 16:37:42", 
+            "title": "Lamb from Candace (ID 6865de9eb)", 
+            "image": "photologue/photos/tunis-lamb-6865de9eba.jpg", 
+            "tags": "candace, lamb, 6865de9eb", 
+            "crop_from": "center", 
+            "effect": null, 
+            "caption": "", 
+            "is_public": true, 
+            "date_added": "2011-05-04 16:37:42"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "photologue.photosize", 
+        "fields": {
+            "name": "thumbnail", 
+            "watermark": null, 
+            "increment_count": false, 
+            "effect": null, 
+            "crop": true, 
+            "height": 100, 
+            "width": 100, 
+            "upscale": false, 
+            "pre_cache": false, 
+            "quality": 80
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "photologue.photosize", 
+        "fields": {
+            "name": "display", 
+            "watermark": null, 
+            "increment_count": true, 
+            "effect": null, 
+            "crop": false, 
+            "height": 400, 
+            "width": 400, 
+            "upscale": false, 
+            "pre_cache": true, 
+            "quality": 90
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "photologue.photosize", 
+        "fields": {
+            "name": "mug", 
+            "watermark": null, 
+            "increment_count": false, 
+            "effect": null, 
+            "crop": true, 
+            "height": 250, 
+            "width": 620, 
+            "upscale": true, 
+            "pre_cache": false, 
+            "quality": 90
+        }
+    }
+]
