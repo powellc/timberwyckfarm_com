@@ -1,20 +1,28 @@
 {% extends 'farm/base.html' %}
 {% load humanize typogrify truncatechars note_tags farm_tags %}
 
-{% block content %}
-
-<div id="genus-{{object.id}}" class="animal grid_8 prefix_2 suffix_2">
-  <div id="submenu">
-    <ul>
-    <li class="back"><a class="button red" href="{% url fm-genus-list %}">Back</a></li>
+{% block submenu %}
+    {% get_genuses all as genuses %}
+    <ul class="submenu">
+    {% for g in genuses %}
+    {% ifequal g object %}
+        <li >{{g}}</li>
+    {% else %}
+        <li ><a class="" href="{{g.get_absolute_url}}">{{g}}</a></li>
+    {% endifequal %}
+    {% endfor %}
     </ul>
-  </div>
-  <h2>{{object}}</h2>
+{% endblock %}
+
+{% block content %}
+<div id="genus-{{object.id}}" class="animal grid_8 prefix_2 suffix_2">
+  <p class="animal-icon"><img src="{{MEDIA_URL}}img/animal_icons/{{object.slug}}.png" /></p>
+  <h2>{{object}} {% if object.technical_name %}<span class="alt">({{object.technical_name}})</span>{% endif %}</h2>
 
   {% for b in genus.breed_set.all %}
   {% if b.animal_set.all %}
   <div class="breed" id="{{b.genus}}">
-      <p><a href="{{b.get_absolute_url}}">{{b}}</a></p>
+      <p><a class="" href="{{b.get_absolute_url}}">{{b.title}}</a></p>
       {% if b.animal_set.all %}
       <ul class="animals">
           {% for a in b.animal_set.all %}

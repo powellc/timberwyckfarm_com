@@ -19,10 +19,23 @@ $(document).ready(function(){
 </script>
 {% endblock %}
 
+{% block submenu %}
+    {% get_genuses all as genuses %}
+    <ul class="submenu">
+    {% for g in genuses %}
+    {% ifequal g object %}
+        <li >{{g}}</li>
+    {% else %}
+        <li ><a class="" href="{{g.get_absolute_url}}">{{g}}</a></li>
+    {% endifequal %}
+    {% endfor %}
+    </ul>
+{% endblock %}
+
 {% block content %}
 
 <div id="animal-{{object.uuid}}" class="animal grid_8 prefix_2 suffix_2">
-  <div id="submenu">
+  <div id="editmenu">
     <ul>
     {% if user.is_authenticated %}
     <li class="add-note"><a class="button black shoNoteWindow" href="#noteWindow">Add a note</a></li>
@@ -46,9 +59,17 @@ $(document).ready(function(){
     {% endif %}
     </ul>
   </div>
-  <h2>{{object.display_name}} ({{object.breed}})</h2>
+  <h2>{{object.display_name}} <span class="alt">({{object.breed}})</span></h2>
+    <div class="main-photo">
+    {% for p in object.photos.all %}
+      {% if forloop.first %}
+      <p><img src="{{p.get_mug_url}}" alt="{{p}}" /></p>
+      {% endif %}
+    {% endfor %}
+    </div>
+
     <div class="info">
-        <h4>Basic info</h4>
+        <h4>Information</h4>
         <ul>
             <li><em>Breed:</em>&nbsp;<a href="{% url fm-breed-detail object.primary_breed.genus.slug object.primary_breed.slug %}">{{object.breed.title}}</a></li>
             <li><em>Sex:</em>&nbsp;{{object.get_sex_display}}</li>
@@ -56,24 +77,32 @@ $(document).ready(function(){
             {% if object.dam%}<li><em>Dam:</em>&nbsp;<a href="{{object.dam.get_absolute_url}}">{{object.dam.name}}</a></li>{% endif %}
             {% if object.sire%}<li><em>Sire:</em>&nbsp;<a href="{{object.sire.get_absolute_url}}">{{object.sire.name}}</a></li>{% endif %}
             <li><em>ID:</em>&nbsp;{{object.uuid|truncate:10}}</li>
+            <li><em>Offspring:</em>&nbsp;{{object.progeny.count}}</li>
+            <li><em>Pregnancies:</em>&nbsp;{{object.births|length}}</li>
+            <li><em>Breeder:</em>&nbsp;{% if object.breeder_farm %}{{object.breeder_farm}}{% else %}{{object.alt_breeder}}{% endif %}</li>
+            <li><em>Owner:</em>&nbsp;{% if object.owner_farm %}{{object.owner_farm}}{% else %}{{object.alt_owner}}{% endif %}</li>
             {% for a in object.animalattribute_set.all %}
-            <li><em>{{a.name}}:</em>&nbsp;{{a.value}}</li>
+            <li><em>{{a.name|upper}}:</em>&nbsp;{{a.value}}</li>
             {% endfor %}
         </ul>
     </div>
 
-    {% if object.photos.all %}
+    <div class="description">
+        {{object.rendered_description|safe}}
+    </div>
+
+    {% if object.photos.all and object.photos.all.count > 1 %}
     <div class="box photos">
-    <h3 >Photos</h3>
+    <h3 >More photos</h3>
     {% for p in object.photos.all %}
+      {% if forloop.first %}
+      {% else %}
       <p><img src="{{p.get_thumbnail_url}}" alt="{{p}}" /></p>
+      {% endif %}
     {% endfor %}
     </div>
     {% endif %}
 
-    <div id="animal-description">
-        {{object.rendered_description|safe}}
-    </div>
 
     {% if object.notes.all %}
     <div class="notes">
@@ -83,24 +112,19 @@ $(document).ready(function(){
     {% endif %}
 
     {% if object.progeny %}
+    <div class="progeny">
     <h3>Offspring</h3>
-    <ul>
-      <li>Offspring: {{object.progeny.count}}</li>
-      <li>Pregnancies: {{object.births|length}}</li>
-    </ul>
-    <p class="trigger"><a class="button black" href="javascript:void(0);" >More information</a></p>
-
-    <div class="birth-record">
-    {% if object.sire_of%}
+    {% if object.sire_of %}
       <h4>Sire of </h4>
       {% child_table_for object %}
     {% endif %}
 
     {% if object.dam_of%}
       <h4>Dam of </h4>
-      {% child_table_for object %}
+      {% child_table_for object 'dam' %}
     {% endif %}
     </div>
+
     {% endif %}
 
 

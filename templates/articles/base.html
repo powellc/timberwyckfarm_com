@@ -6,6 +6,8 @@
 <link rel="alternate" type="application/rss+xml" title="Latest Blog Articles RSS Feed" href="{% url articles_feed 'latest' %}" />
 {% endblock %}
 
+{% block body-class %}jr{% endblock %}
+
 {% block content %}
 {% block articles-content %}{% endblock %}
 

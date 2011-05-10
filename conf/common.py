@@ -89,7 +89,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
 
     'django_extensions',
-    'debug_toolbar',
+#    'debug_toolbar',
     'easy_thumbnails',
     'onec_utils',
     'markup_mixin',

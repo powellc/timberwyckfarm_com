@@ -6,11 +6,14 @@
 <div class="grid_8 prefix_2 suffix_2">
 <h2>Our animals</h2>
 
-<ul>
+<p class="genus-list">
 {% for g in genus_list %}
-  <li><a href="{{g.get_absolute_url}}">{{g}}</a></li>
+<dl class="genus">
+    <dt><a href="{{g.get_absolute_url}}">{{g.plural_title}}</a></dt>
+    <dd><a href="{{g.get_absolute_url}}"><img src="{{MEDIA_URL}}img/animal_icons/{{g.slug}}.png" /></a></dd>
+</dl>
 {% endfor %}
-</ul>
+</p>
 </div>
 
 {% endblock %}

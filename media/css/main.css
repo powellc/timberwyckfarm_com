@@ -1,5 +1,6 @@
 body { font-family:'Merriweather', 'Georgia', serif; font-size:0.9em; color:#000; }
 
+.alt { color:#aaa; font-style:italic; font-size:0.8em; }
 a {color:#962020;}
 a:hover { color:maroon;}
 a:visited { color:maroon;}
@@ -8,7 +9,7 @@ a img { text-decoration:none; border:2px solid #444; }
 h2 { letter-spacing:-1px;}
 #logo { margin-top:3em; padding:0; width:500px; height:140px; background: url(../img/logo.png) no-repeat; text-indent: -9999px;}
 
-#menu { font-size: 1.1em; margin-top:0; padding-top:0; border-bottom:3px solid #444; padding-bottom:6px;}
+#menu { font-size: 1.1em; margin-top:0; padding-top:0; border-bottom:3px solid #444; padding-bottom:6px; margin-bottom:0}
 #menu li { list-style:none; display:inline; }
 #menu a { display:inline; padding:8px 8px 6px 8px; margin-bottom:8px;font-weight:bold; text-transform:uppercase; font-style:none;}
 #menu a:first { padding-left:0; }
@@ -16,7 +17,9 @@ h2 { letter-spacing:-1px;}
 #menu a:hover {background:#aaa; color:white;}
 #menu a.active {background:#444; color:white; }
 
-#content { font-family:"Droid Sans"; } 
+body.jr #menu a.jr, body.am #menu a.am, body.pr #menu a.pr, body.cm #menu a.cm, body.ab #menu a.ab { background:#aaa; color:white; }
+
+#content { font-family:"Droid Sans", "Helvetica Neue", Verdana, Arial, sans-serif; } 
 h2.title {display:inline; }
 h3.dateline { display:inline; margin-left:1em; color:#444; font-size:0.9em; font-style:italic; }
 #article-content p { padding-top:1em; font-family: 'Droid Sans', arial, sans-serif; line-height:1.5em;}
@@ -45,6 +48,37 @@ p#prev-article { float:left; }
 #articles .image h2 a { color:white; padding:10px; line-height:1.5em;}
 #articles div.image:hover h2 { text-indent:0px; }
 #articles div.image:hover h2 a { text-indent:0px; background:rgb(0,0,0); background:rgba(0,0,0,0.7);}
+
+#editmenu { float:right; }
+#editmenu ul {list-style:none; }
+#editmenu li { display:inline; padding-left:1em; }
+
+ul.submenu { background:#ddd; padding:0.5em 0 0.5em 0; margin-top:0; border-top:2px solid #999; border-radius:0 0 5px 5px ;}
+ul.submenu a { text-decoration:none; font-size:1em; color:#666; font-weight:normal; }
+ul.submenu a:hover { color: #999; font-weight:bold; }
+ul.submenu {list-style:none; }
+ul.submenu li { font-size:1.1em; color:#666; font-weight:bold; display:inline; padding-left:1em;}
+
+p.genus-list { }
+dl.genus img { border:none; }
+dl.genus { float:left; width:160px; margin-right:1em; }
+dl.genus dt { text-align:center; padding-left:0; }
+
+p.animal-icon { float:right; }
+p.animal-icon img { border:none; }
+.animal .main-photo { clear:both; padding:0; margin-bottom:1em; border-bottom: 1px solid #ccc; }
+.animal .photos { clear:both; border-bottom:1px solid #777; padding:1em; margin:1em 0; }
+.animal .photos p { display:inline; }
+.animal img { border:1px solid #aaa; }
+.animal .info { float:left; border-right:1px solid #ccc; padding:0 1em 0 1em; margin:0 1em 1em 0; background:efe; }
+.animal .info ul { padding:0; list-style:none; }
+.animal .info ul li {  }
+.aniaml .description { padding-top:1em;  }
+.animal .notes { clear:both; }
+.animal .progeny { clear:both; }
+
+.breed { font-size:1.2em; font-weight:bold; float:left; width:170px; padding:10px; margin-right:10px;}
+.breed ul.animals {margin:0; padding:0; font-size;1em; font-weight:normal; list-style:none; }
 
 .footer { margin-top:2em; color:#777; }
 

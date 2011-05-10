@@ -1,6 +1,7 @@
 {% load i18n thumbnail humanize typogrify %}
 	{% if article.attachments.all %}
 		{% for att in article.attachments.all %}
+        {% if forloop.first %}
 			{% if att.content_type_class == "image_png" %}
 	<div class="image">
 	<p id="attachement-{{forloop.counter}}" class="attachment ct_{{ att.content_type_class }}"><a href="{{ article.get_absolute_url }}" title="{% trans 'Read this article' %}"><img src="{{att.attachment.url}}" /></a></p>
@@ -16,6 +17,7 @@
 	<h2><a href="{{ article.get_absolute_url }}" title="{% trans 'Read this article' %}">{{ article.title }}</a></h2>
     		{% endif %}
     		{% endif %}
+        {% endif %}
 		{% endfor %}
 	{% else %}
 	<h2><a href="{{ article.get_absolute_url }}" title="{% trans 'Read this article' %}">{{ article.title }}</a></h2>
