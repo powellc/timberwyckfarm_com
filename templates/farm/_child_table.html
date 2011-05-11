@@ -6,7 +6,15 @@
         <tr>
             <td><a href="{{p.get_absolute_url}}">{{p.get_sex_display}} {% if p.name %}{{p.name}}{% endif %}{{p.breed}}</a></td>
             <td>{{p.birthday|date:"Y M j"}}</td>
-            <td>{{p.location}}</td>
+	    {% if p.owner_farm %}
+            <td>{{p.owner_farm}}</td>
+	    {% else %}
+              {% if p.alt_owner %}
+            <td>{{p.alt_owner}}</td>
+              {% else %}
+            <td>Unknown</td>
+	      {% endif %}
+            {% endif %} 
             <td>{{p.uuid|truncate:10}}</td>
         </tr>
         {% endfor %}
