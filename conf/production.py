@@ -1,6 +1,6 @@
 from common import *
 
-DEBUG=False
+DEBUG=True
 #Start up logging to the console
 
 #FILE_HANDLER = logging.FileHandler(os.path.join(PROJECT_ROOT)+'/django.log', 'w')
@@ -22,7 +22,7 @@ DATABASES = {
 }
 
 MEDIA_ROOT=os.path.join(PROJECT_ROOT, 'media/')
-MEDIA_URL = 'http://timberwyckfarm.com/media/'
+MEDIA_URL = 'http://www.timberwyckfarm.com/media/'
 ADMIN_MEDIA_PREFIX=MEDIA_URL+'admin/'
 
 TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, 'templates'),)

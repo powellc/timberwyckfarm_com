@@ -1,3 +1,18 @@
 {% extends 'base.html' %}
 
 {% block body-class %}am{% endblock %}
+
+{% load farm_tags %}
+
+{% block submenu %}
+    {% get_genuses all as genuses %}
+    <ul class="submenu">
+    {% for g in genuses %}
+    {% ifequal g object %}
+        <li >{{g.plural_title}}</li>
+    {% else %}
+        <li ><a class="" href="{{g.get_absolute_url}}">{{g.plural_title}}</a></li>
+    {% endifequal %}
+    {% endfor %}
+    </ul>
+{% endblock %}

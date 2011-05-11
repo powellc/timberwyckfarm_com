@@ -1,14 +1,14 @@
 {% extends 'farm/base.html' %}
-{% load humanize typogrify truncatechars note_tags farm_tags %}
+{% load humanize typogrify_tags truncatechars note_tags farm_tags %}
 
 {% block submenu %}
     {% get_genuses all as genuses %}
     <ul class="submenu">
     {% for g in genuses %}
     {% ifequal g object %}
-        <li >{{g}}</li>
+        <li >{{g.plural_title}}</li>
     {% else %}
-        <li ><a class="" href="{{g.get_absolute_url}}">{{g}}</a></li>
+        <li ><a class="" href="{{g.get_absolute_url}}">{{g.plural_title}}</a></li>
     {% endifequal %}
     {% endfor %}
     </ul>

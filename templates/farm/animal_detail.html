@@ -1,5 +1,5 @@
 {% extends 'farm/base.html' %}
-{% load humanize typogrify truncatechars note_tags farm_tags %}
+{% load humanize typogrify_tags truncatechars note_tags farm_tags %}
 
 {% block extra-head %}
 <script type="text/javascript">
@@ -19,18 +19,6 @@ $(document).ready(function(){
 </script>
 {% endblock %}
 
-{% block submenu %}
-    {% get_genuses all as genuses %}
-    <ul class="submenu">
-    {% for g in genuses %}
-    {% ifequal g object %}
-        <li >{{g}}</li>
-    {% else %}
-        <li ><a class="" href="{{g.get_absolute_url}}">{{g}}</a></li>
-    {% endifequal %}
-    {% endfor %}
-    </ul>
-{% endblock %}
 
 {% block content %}
 
@@ -78,11 +66,11 @@ $(document).ready(function(){
             {% if object.sire%}<li><em>Sire:</em>&nbsp;<a href="{{object.sire.get_absolute_url}}">{{object.sire.name}}</a></li>{% endif %}
             <li><em>ID:</em>&nbsp;{{object.uuid|truncate:10}}</li>
             <li><em>Offspring:</em>&nbsp;{{object.progeny.count}}</li>
-            <li><em>Pregnancies:</em>&nbsp;{{object.births|length}}</li>
+            {% if object.sex == "F" %}<li><em>Litters:</em>&nbsp;{{object.births|length}}</li>{% endif %}
             <li><em>Breeder:</em>&nbsp;{% if object.breeder_farm %}{{object.breeder_farm}}{% else %}{{object.alt_breeder}}{% endif %}</li>
             <li><em>Owner:</em>&nbsp;{% if object.owner_farm %}{{object.owner_farm}}{% else %}{{object.alt_owner}}{% endif %}</li>
             {% for a in object.animalattribute_set.all %}
-            <li><em>{{a.name|upper}}:</em>&nbsp;{{a.value}}</li>
+            <li><em>{{a.description|caps}}:</em>&nbsp;{{a.value}}</li>
             {% endfor %}
         </ul>
     </div>

@@ -1,0 +1,53 @@
+{% extends 'farm/base.html' %}
+{% load humanize typogrify_tags note_tags farm_tags %}
+
+{% block body-class %}pr{% endblock %}
+{% block content %}
+
+<div id="product-{{object.id}}" class="product grid_8 prefix_2 suffix_2">
+  <h2>{{object.title}} <span class="alt">({{object.type}})</span></h2>
+    <div class="main-photo">
+    {% for p in object.photos.all %}
+      {% if forloop.first %}
+      <p><img src="{{p.get_mug_url}}" alt="{{p}}" /></p>
+      {% endif %}
+    {% endfor %}
+    </div>
+
+    <div class="info">
+        <h4>Information</h4>
+        <ul>
+            {% for a in object.productattribute_set.all %}
+            <li><em>{{a.name|upper}}:</em>&nbsp;{{a.value}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="description">
+        {{object.description|typogrify}}
+    </div>
+
+    {% if object.photos.all and object.photos.all.count > 1 %}
+    <div class="box photos">
+    <h3 >More photos</h3>
+    {% for p in object.photos.all %}
+      {% if forloop.first %}
+      {% else %}
+      <p><img src="{{p.get_thumbnail_url}}" alt="{{p}}" /></p>
+      {% endif %}
+    {% endfor %}
+    </div>
+    {% endif %}
+
+
+    {% if object.notes.all %}
+    <div class="notes">
+    <h3 >Notes</h3>
+	    {% note_list_for object %}
+    </div>
+    {% endif %}
+
+    
+</div>
+
+{% endblock %}

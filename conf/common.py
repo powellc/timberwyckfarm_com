@@ -64,7 +64,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.csrf.CsrfResponseMiddleware',
-    'myutils.middleware.SmartAppendSlashMiddleware',
+    'onec_utils.middleware.SmartAppendSlashMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
@@ -93,7 +93,7 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'onec_utils',
     'markup_mixin',
-	'typogrify',
+    'typogrify',
     'attributes',
 
     'articles',

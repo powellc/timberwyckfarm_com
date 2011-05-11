@@ -1,4 +1,4 @@
-{% load i18n thumbnail humanize typogrify %}
+{% load i18n thumbnail humanize typogrify_tags %}
 	{% if article.attachments.all %}
 		{% for att in article.attachments.all %}
         {% if forloop.first %}

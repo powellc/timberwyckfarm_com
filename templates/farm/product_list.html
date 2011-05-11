@@ -4,13 +4,11 @@
 {% block content %}
 
 <div class="grid_8 prefix_2 suffix_2">
-<h2>Animals</h2>
+<h2>What we sell</h2>
 
 <ul>
-{% for a in animal_list|dictsort:"breed" %}
-  {% if a.name %}
-  <li><a href="{{a.get_absolute_url}}">{{a.display_name}}</a></li>
-  {% endif %}
+{% for p in product_list|dictsort:"type" %}
+  <li><a href="{{p.get_absolute_url}}">{{p.title}}</a></li>
 {% endfor %}
 </ul>
 </div>
