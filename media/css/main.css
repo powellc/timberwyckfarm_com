@@ -1,8 +1,8 @@
 body { font-family:'Merriweather', 'Georgia', serif; font-size:0.9em; color:#000; }
 
 .alt { color:#aaa; font-style:italic; font-size:0.8em; }
-a {color:#962020;}
-a:hover { color:maroon;}
+a {color:#962020; -webkit-transition-property: background, #fff; -webkit-transition-duration: 0.25s, 0.25s; -webkit-transition-timing-function: linear, ease-in; -moz-transition-property: background, #fff; -moz-transition-duration: 0.25s, 0.25s; -moz-transition-timing-function: linear, ease-in; }
+a:hover { color:#555;}
 a:visited { color:maroon;}
 a img { text-decoration:none; border:2px solid #444; }
 
@@ -20,8 +20,8 @@ h2 { letter-spacing:-1px;}
 body.jr #menu a.jr, body.am #menu a.am, body.pr #menu a.pr, body.cm #menu a.cm, body.ab #menu a.ab { background:#aaa; color:white; }
 
 #content { font-family:"Droid Sans", "Helvetica Neue", Verdana, Arial, sans-serif; } 
-h2.title {display:inline; }
-h3.dateline { display:inline; margin-left:1em; color:#444; font-size:0.9em; font-style:italic; }
+h2.title {margin-top:1em;}
+h3.dateline { margin-left:0.5em; color:#444; font-size:0.95em; font-style:italic; }
 #article-content p { padding-top:1em; font-family: 'Droid Sans', arial, sans-serif; line-height:1.5em;}
 #article-attachments { clear:both; margin-top:6em; border-top:1px solid #444; }
 #article-content p.attachment { float:left; margin:0 1em 1em 0; }
@@ -53,9 +53,10 @@ p#prev-article { float:left; }
 #editmenu ul {list-style:none; }
 #editmenu li { display:inline; padding-left:1em; }
 
+ul.submenu { font-family:"Droid Sans", "Helvetica Neue", Arial, sans; }
 ul.submenu { background:#ddd; padding:0.5em 0 0.5em 0; margin-top:0; border-top:2px solid #999; border-radius:0 0 5px 5px ;}
-ul.submenu a { text-decoration:none; font-size:1em; color:#666; font-weight:normal; }
-ul.submenu a:hover { color: #999; font-weight:bold; }
+ul.submenu a { padding:0 5px 0 5px; text-decoration:none; font-size:0.9em; color:#666; font-weight:normal; }
+ul.submenu a:hover { color: #999; padding:0 2px 0 2px; font-weight:bold; }
 ul.submenu {list-style:none; }
 ul.submenu li { font-size:1.1em; color:#666; font-weight:bold; display:inline; padding-left:1em;}
 
@@ -66,11 +67,13 @@ dl.genus dt { text-align:center; padding-left:0; }
 
 p.animal-icon { float:right; }
 p.animal-icon img { border:none; }
-.animal .main-photo { clear:both; padding:0; margin-bottom:1em; border-bottom: 1px solid #ccc; }
-.animal .photos { clear:both; border-bottom:1px solid #777; padding:1em; margin:1em 0; }
+.animal .main-photo { border-bottom:1px solid #777; height:280px; padding:0; background:white; clear:both; padding:0; margin:0em; }
+.animal .main-photo li {display:inline; padding:0; position:absolute; list-style: none; padding-bottom:1em;}
+.animal .photos { list-style:none; clear:both; border-bottom:1px solid #777; padding:1em; margin:1em 0; }
 .animal .photos p { display:inline; }
+.animal .photo-rotator { padding:0; margin:0; }
 .animal img { border:1px solid #aaa; }
-.animal .info { float:left; border-right:1px solid #ccc; padding:0 1em 0 1em; margin:0 1em 1em 0; background:efe; }
+.animal .info { float:left; border-right:1px solid #ccc; border-bottom:1px solid #ccc; padding:0 2em 0 1em; margin:0 1em 1em 0; background:fee; }
 .animal .info ul { padding:0; list-style:none; }
 .animal .info ul li {  }
 .aniaml .description { padding-top:1em;  }
@@ -80,7 +83,7 @@ p.animal-icon img { border:none; }
 .breed { font-size:1.2em; font-weight:bold; float:left; width:170px; padding:10px; margin-right:10px;}
 .breed ul.animals {margin:0; padding:0; font-size;1em; font-weight:normal; list-style:none; }
 
-.footer { margin-top:2em; color:#777; }
+.footer { margin-top:3em; color:#555; }
 
 table.table2{
     font-style: normal;
@@ -141,3 +144,12 @@ table.table2{
     content : url(../images/check1.png)
 }
 
+/* rotator in-page placement */
+div.rotator { border-bottom:1px solid #777; height:280px; padding:0; background:white;}
+/* rotator css */
+div.rotator ul { margin-top:0; padding-left:0;}
+div.rotator ul li { display:inline; padding:0; position:absolute; list-style: none; padding-bottom:1em;}
+/* rotator image style */	
+div.rotator ul li img { background: #FFF; -webkit-transition-property: background, #fff; -webkit-transition-duration: 0.25s, 0.25s; -webkit-transition-timing-function: linear, ease-in; -moz-transition-property: background, #fff; -moz-transition-duration: 0.25s, 0.25s; -moz-transition-timing-function: linear, ease-in; }
+div.rotator img:hover { background:#D5DBF0;}
+div.rotator ul li.show { z-index:500; }

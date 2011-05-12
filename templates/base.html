@@ -30,8 +30,8 @@
                 <li><a class="jr" href="{% url articles_archive %}" class="active">Journal</a></li>
                 <li><a class="am" href="{% url fm-genus-list %}">Animals</a></li>
                 <li><a class="pr" href="{% url fm-product-list %}">Products</a></li>
-                <li><a class="cm" href="">Farm Camp</a></li>
-                <li><a class="ab" href="">About</a></li>
+                <li><a class="ed" href="{% url fl-education %}">Education</a></li>
+                <li><a class="tr" href="{% url fl-tour %}">Tour</a></li>
             </ul>
             {% block submenu %}{% endblock %}
         </div>
@@ -43,7 +43,8 @@
     {% block footer %}
     <div class="container_12" id="footer">
         <div class="footer grid_8 prefix_2 suffix_2">
-        <p>Copyright &copy; {% now "Y" %} Colin Powell. All rights reserved. | Site designed & built by <a href="http://onecardinal.com">One Cardinal</a></p>
+        <p>432 The Shore Road, Castine, ME 04421 | 207.326.1014 | info@timberwyckfarm.com</p>
+        <p>&copy; {% now "Y" %} Timberwyck Farm. All rights reserved. | Site designed & built by <a href="http://onecardinal.com">One Cardinal</a></p>
     </div>
     </div>
     {% endblock %}

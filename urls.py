@@ -32,3 +32,12 @@ urlpatterns += patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^', include('articles.urls')),
 )
+urlpatterns+= patterns('django.contrib.flatpages.views',
+    url(r'^tour/$', 'flatpage', {'url': '/tour/'}, name='fl-tour'),
+    url(r'^tour/barn/$', 'flatpage', {'url': '/tour/barn/'}, name='fl-tour-barn'),
+    url(r'^tour/stable/$', 'flatpage', {'url': '/tour/stable/'}, name='fl-tour-stable'),
+    url(r'^tour/garden/$', 'flatpage', {'url': '/tour/garden/'}, name='fl-tour-garden'),
+    url(r'^tour/pastures/$', 'flatpage', {'url': '/tour/pastures/'}, name='fl-tour-pastures'),
+    url(r'^tour/woods/$', 'flatpage', {'url': '/tour/woods/'}, name='fl-tour-woods'),
+    url(r'^education/$', 'flatpage', {'url': '/education/'}, name='fl-education'),
+)

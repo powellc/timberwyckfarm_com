@@ -2,6 +2,7 @@
 {% load humanize typogrify_tags note_tags farm_tags %}
 
 {% block body-class %}pr{% endblock %}
+{% block title %}{{object.title}} | Products{%endblock %}
 {% block content %}
 
 <div id="product-{{object.id}}" class="product grid_8 prefix_2 suffix_2">

@@ -1,7 +1,7 @@
 {% extends 'articles/base.html' %}
 {% load i18n %}
 
-{% block title %}{% trans article.title %}{% endblock %}
+{% block title %}{% trans article.title %} | News {% endblock %}
 {% block meta-keywords %}{{ article.keywords|escape }}{% endblock %}
 {% block meta-description %}{{ article.description|escape }}{% endblock %}
 {% block extra-head %}
