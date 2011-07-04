@@ -1,5 +1,5 @@
 {% extends 'farm/base.html' %}
-{% load humanize typogrify_tags markup truncatechars note_tags farm_tags %}
+{% load i18n humanize typogrify_tags markup truncatechars note_tags farm_tags %}
 {% block title %}{{breed.title}} | Animals {% endblock %}
 
 {% block submenu %}
@@ -18,17 +18,26 @@
 {% block content %}
 <div id="breed-{{breed.id}}" class="grid_8 prefix_2 suffix_2">
   <p class="animal-icon"><img src="{{MEDIA_URL}}img/animal_icons/{{object.genus.slug}}.png" /></p>
-  <h2>{{breed}}</h2>
+  <h2>{{breed.title}} {{breed.genus.plural_title}}</h2>
 
   {{breed.description|markdown|typogrify}}
-
-      <ul class="animals">
+  <ul>
   {% for a in breed.animal_set.all %}
-          {% if a.name %}
-          <li><a href="{{a.get_absolute_url}}">{{a.name}}</a></li>
-          {% endif %}
-          {% endfor %}
-      </ul>
+    {% if a.name and a.photos.all %}
+    <li id="articles" style="padding-bottom:2em;">
+	<div id="" class="image">
+	<p id="" class="attachment"><a href="{{ a.get_absolute_url }}" title="{% trans 'More about' %} {{a.name}}"><img src="{% for p in a.photos.all %}{% if forloop.first %}{{p.get_display_url}}{% endif %}{% endfor %}" /></a></p>
+	<h2 class="roll-title"><a href="{{ a.get_absolute_url }}" title="{% trans 'More about' %} {{a.name}}">{{ a.name|typogrify }}</a></h2>
+	</div>
+     </li>
+     {% else %}
+     {% if a.name %}
+     <li>
+	<h2><a href="{{ a.get_absolute_url }}" title="{% trans 'More about' %} {{a.name}}">{{ a.name }}</a></h2>
+     </li>
+     {% endif %}
+     {% endif %}
+  {% endfor %}
   </div>
 </div>
 

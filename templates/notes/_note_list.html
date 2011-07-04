@@ -1,0 +1,28 @@
+{% block extra-head %}
+<script type="text/javascript">
+$(document).ready(function(){
+	
+    {% for n in notes %}
+    $(".note-{{note.id}}").hide();
+    {% endfor %}
+
+	$("dt.trigger").click(function(){
+		$(this).toggleClass("active").next().slideToggle("slow");
+	});
+
+});
+</script>
+{% endblock %}
+
+{% load humanize typogrify_tags %}
+    {% if notes %}
+    <div class="note-list">
+    {% for n in notes %}
+    <dl>
+        <dt class="trigger"><a href="javascript:void(0);">{{n.date|naturalday}}</a></dt>
+        <dd class="note-{{note.id}}">{{n.rendered_content|safe|typogrify}} &mdash;
+        <p><em>{{n.topic}}</em></p></dd>
+    </dl>
+    </div>
+    {% endfor %}
+    {% endif %}
