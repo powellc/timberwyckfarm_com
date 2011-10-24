@@ -56,9 +56,10 @@ p#prev-article { float:left; }
 ul.submenu { font-family:"Droid Sans", "Helvetica Neue", Arial, sans; }
 ul.submenu { background:#ddd; padding:0.5em 0 0.5em 0; margin-top:0; border-top:2px solid #999; border-radius:0 0 5px 5px ;}
 ul.submenu a { padding:0 5px 0 5px; text-decoration:none; font-size:0.9em; color:#666; font-weight:normal; }
-ul.submenu a:hover { color: #999; padding:0 2px 0 2px; font-weight:bold; }
+ul.submenu a:hover { color: #999; padding:0 3px 0 3px;}
 ul.submenu {list-style:none; }
 ul.submenu li { font-size:1.1em; color:#666; font-weight:bold; display:inline; padding-left:1em;}
+ul.submenu a:hover { font-size:1.25em; font-weight:bold; }
 
 p.genus-list { }
 dl.genus img { border:none; }
@@ -79,6 +80,8 @@ p.animal-icon img { border:none; }
 .aniaml .description { padding-top:1em;  }
 .animal .notes { clear:both; }
 .animal .progeny { clear:both; }
+
+.animal-info li { padding-bottom:0.5em; }
 
 .breed { font-size:1.2em; font-weight:bold; float:left; width:170px; padding:10px; margin-right:10px;}
 .breed ul.animals {margin:0; padding:0; font-size;1em; font-weight:normal; list-style:none; }
