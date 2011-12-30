@@ -156,3 +156,6 @@ div.rotator ul li { display:inline; padding:0; position:absolute; list-style: no
 div.rotator ul li img { background: #FFF; -webkit-transition-property: background, #fff; -webkit-transition-duration: 0.25s, 0.25s; -webkit-transition-timing-function: linear, ease-in; -moz-transition-property: background, #fff; -moz-transition-duration: 0.25s, 0.25s; -moz-transition-timing-function: linear, ease-in; }
 div.rotator img:hover { background:#D5DBF0;}
 div.rotator ul li.show { z-index:500; }
+
+.wikipage-link { idth:100px; padding:10px; eight:100px; box-shadow:2px 2px 1px #555; margin:10px;float:left; border:1px solid #555; font-size:1.6em; overflow:none; font-weight:bold; }
+.wikipage-link a { text-decoration:none; }
