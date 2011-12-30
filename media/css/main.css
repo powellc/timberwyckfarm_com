@@ -17,7 +17,7 @@ h2 { letter-spacing:-1px;}
 #menu a:hover {background:#aaa; color:white;}
 #menu a.active {background:#444; color:white; }
 
-body.jr #menu a.jr, body.am #menu a.am, body.pr #menu a.pr, body.cm #menu a.cm, body.ab #menu a.ab { background:#aaa; color:white; }
+body.jr #menu a.jr, body.am #menu a.am, body.pr #menu a.pr, body.cm #menu a.cm, body.tr #menu a.tr { background:#aaa; color:white; }
 
 #content { font-family:"Droid Sans", "Helvetica Neue", Verdana, Arial, sans-serif; } 
 h2.title {margin-top:1em;}

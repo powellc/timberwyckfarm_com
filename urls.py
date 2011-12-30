@@ -2,6 +2,7 @@ from django.conf.urls.defaults import *
 from django.conf import settings
 from django.views.static import serve
 from unipath import FSPath as Path
+from farm.models import Building, Field
 #from timberwyckfarm_com.sitemap import TWFSitemap
 
 #feeds = {
@@ -27,6 +28,12 @@ admin.autodiscover()
 urlpatterns += patterns('',
     #(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
     #(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
+    url(r'^tour/buildings/$', view=ListView.as_view(model=Building), name="fm-building-list"),
+    url(r'^tour/buildings/(?P<slug>[-\w]+)/$', view=DetailView.as_view(model=Building), name="fm-building-detail"),
+
+    url(r'^tour/fields/$', view=ListView.as_view(model=Field), name="fm-field-list"),
+    url(r'^tour/fields/(?P<slug>[-\w]+)/$', view=DetailView.as_view(model=Field), name="fm-field-detail"),
+
     (r'^', include('farm.urls')),
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
@@ -37,10 +44,5 @@ urlpatterns += patterns('',
 )
 urlpatterns+= patterns('django.contrib.flatpages.views',
     url(r'^tour/$', 'flatpage', {'url': '/tour/'}, name='fl-tour'),
-    url(r'^tour/barn/$', 'flatpage', {'url': '/tour/barn/'}, name='fl-tour-barn'),
-    url(r'^tour/stable/$', 'flatpage', {'url': '/tour/stable/'}, name='fl-tour-stable'),
-    url(r'^tour/garden/$', 'flatpage', {'url': '/tour/garden/'}, name='fl-tour-garden'),
-    url(r'^tour/pastures/$', 'flatpage', {'url': '/tour/pastures/'}, name='fl-tour-pastures'),
-    url(r'^tour/woods/$', 'flatpage', {'url': '/tour/woods/'}, name='fl-tour-woods'),
     url(r'^education/$', 'flatpage', {'url': '/education/'}, name='fl-education'),
 )
