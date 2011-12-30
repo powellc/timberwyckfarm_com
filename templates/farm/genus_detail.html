@@ -30,7 +30,7 @@
       <ul class="animals">
           {% for a in b.animal_set.all %}
           {% if a.name %}
-          <li><a href="{{a.get_absolute_url}}">{{a.name}}</a></li>
+          <li><a href="{{a.get_absolute_url}}">{{a.name}}</a>{% if a.deathday %}&nbsp;[D]{% endif %}</li>
           {% endif %}
           {% endfor %}
       </ul>
