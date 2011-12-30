@@ -95,9 +95,13 @@ INSTALLED_APPS = (
     'markup_mixin',
     'typogrify',
     'attributes',
+    'file_picker',
+    'file_picker.uploads',
+    'file_picker.wymeditor',
 
+    'wiki',
     'articles',
-	'farm',
+    'farm',
     'notes',
     'photologue',
  )

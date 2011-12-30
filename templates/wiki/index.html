@@ -1,0 +1,21 @@
+{% extends 'wiki/base.html' %}
+{% load wiki %}
+
+
+{% block content %}
+<div class="grid_8 prefix_2 suffix_2">
+        <h2>TimberWiki</h2>
+  	<p>Welcome to our wiki about best practices at Timberwyck Farm. Here you will find
+           resources, tips and advice on running a farm, for something like a profit, and 
+           what we have managed to glean from the numerous people who have helped us on our
+           never-ending path to being "real" farmers.</p>
+
+	<h3>Pages</h3>
+        {% if pages %}
+                        {% for page in pages %}
+                                <p class="wikipage-link"><a href="{{ page.get_absolute_url }}">{{ page.name|de_camel_case }}</a></p>
+                        {% endfor %}
+        {% endif %}
+</div>
+
+{% endblock %}

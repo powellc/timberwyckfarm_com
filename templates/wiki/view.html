@@ -1,0 +1,53 @@
+{% extends 'wiki/base.html' %}
+{% load wiki %}
+
+{% block content %}
+<div class="grid_8 prefix_2 suffix_2">
+  <h2 class="wiki-header"><a href="{% url wiki-index %}">TimberWiki</a></h2>
+  <h3 class="right-ribbon title">{{page.name|de_camel_case}}</h3>
+  <div class="clear"></div>
+                        
+        {% if not page.id %}    
+                <p>This page does not exist, <a href="{% url wiki-edit-page page %}">create it now</a>?</p>
+    {% else %}  
+        {% if revision.id %}
+                        
+        <div class="wikitext">
+                        
+                        
+            {% block wikitext %}
+                {{ revision.rendered|safe }}
+            {% endblock %}            </div>
+            <hr />
+          <p>Last updated {{ revision.date|date:'N j, Y, P' }}</p>
+            <p class="wiki-meta">Revision #{{ revision.counter }}, last edited by {{ revision.get_editor_name }}</p>
+                        
+            <p class="wiki-nav">
+            {% block wikinav %}
+                <a href="{% url wiki-view-diff page revision %}">view changes</a>
+                |
+                {% if revision.get_prev %}
+                    <a href="{{ revision.get_prev.get_absolute_url }}">previous</a>
+                {% else %}
+                    previous
+                {% endif %}
+                |
+                {% if revision.get_next %}      
+                    <a href="{{ revision.get_next.get_absolute_url }}">next</a>
+                {% else %}
+                    next
+                {% endif %}
+            {% endblock %}
+            </p>
+        {% else %}
+            This page has no revisions.
+        {% endif %}
+        {% endif %}
+<br/>
+        {% if page.id %}
+                <a class="btn primary" href="{% url wiki-edit-page page %}">Edit this page</a>
+        {% else %}
+                <a class="btn primary" href="{% url wiki-edit-page page %}">Create this page</a>
+        {% endif %}
+</div>
+{% endblock %}
