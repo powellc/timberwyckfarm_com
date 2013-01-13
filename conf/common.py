@@ -17,7 +17,7 @@ TEMPLATE_DEBUG= DEBUG
 
 # Django settings for twyck project.
 ADMINS = (
-    ('Colin Powell', 'colin@onecardinal.com'),
+    ('Colin Powell', 'colin.powell+twyck@gmail.com'),
 )
 
 LANGUAGE_CODE = 'en-us'

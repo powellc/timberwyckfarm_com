@@ -1,12 +1,11 @@
 from common import *
 
-DEBUG=True
+DEBUG=False
 #Start up logging to the console
 
 #FILE_HANDLER = logging.FileHandler(os.path.join(PROJECT_ROOT)+'/django.log', 'w')
-FILE_HANDLER = logging.FileHandler('/var/log/django/timberwyckfarm_com.log', 'w')
+FILE_HANDLER = logging.FileHandler('/var/www/vhosts/twy_production/logs/django.log', 'w')
 logging.getLogger('').addHandler(FILE_HANDLER)
-logging.getLogger('keyedcache').setLevel(logging.DEBUG)
 logging.info("Django Started")
 
 CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
