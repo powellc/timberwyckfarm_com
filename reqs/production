@@ -9,7 +9,6 @@ django-debug-toolbar==0.8.4
 django-extensions==0.6
 django-markup-mixin==0.1.0
 django-photologue==2.3
-django-typogrify==1.2.1
 django-uuidfield==0.2
 python-dateutil==2.0
 smartypants==1.6.0.3
