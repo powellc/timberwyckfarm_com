@@ -16,7 +16,7 @@ DATABASES = {
         'NAME':'twyck',
         'ENGINE':'django.db.backends.postgresql_psycopg2',
         'USER':'twyck',
-        'PASSWORD':'timberwyck1',
+        'PASSWORD':'timberwyckfarm1',
     },
 }
 
