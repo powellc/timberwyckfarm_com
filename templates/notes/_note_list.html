@@ -1,4 +1,3 @@
-{% block extra-head %}
 <script type="text/javascript">
 $(document).ready(function(){
 	
@@ -12,9 +11,8 @@ $(document).ready(function(){
 
 });
 </script>
-{% endblock %}
 
-{% load humanize typogrify %}
+{% load humanize typogrify_tags %}
     {% if notes %}
     <div class="note-list">
     {% for n in notes %}

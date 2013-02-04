@@ -1,0 +1,14 @@
+{% extends 'notes/base.html' %}
+{% load humanize typogrify_tags %}
+
+{% block content %}
+
+<div class="grid_8 prefix_2 suffix_2">
+<h2>Add a note</h2>
+
+<form action="{% url notes-create %}" method="POST">
+{{ form.as_p }}
+<p><input type="submit" value="Save" /></p>
+</form>
+
+{% endblock %}

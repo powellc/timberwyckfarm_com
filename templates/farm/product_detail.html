@@ -1,5 +1,5 @@
 {% extends 'farm/base.html' %}
-{% load humanize typogrify_tags note_tags farm_tags %}
+{% load humanize typogrify_tags note_tags farm_tags markup %}
 
 {% block body-class %}pr{% endblock %}
 {% block title %}{{object.title}} | Products{%endblock %}
@@ -25,7 +25,7 @@
     </div>
 
     <div class="description">
-        {{object.description|typogrify}}
+        {{object.description|markdown|typogrify}}
     </div>
 
     {% if object.photos.all and object.photos.all.count > 1 %}

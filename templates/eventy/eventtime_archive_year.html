@@ -1,0 +1,19 @@
+{% extends "eventy/base.html" %}
+{% load humanize typogrify markup eventy_tags %}
+
+{% block body %}
+<div class="grid_12 last">
+    <h2>Events in {{year}}</h2>
+</div>
+
+<div class="grid_8">
+    <p class="prev"><a href="{% url ev-events-year year=prev_date.year %}" alt="View events from {{prev_date|date:"Y"}}">&larr; previous year</a></p>
+    <p class="next"><a href="{% url ev-events-year year=next_date.year %}" alt="View events from {{next_date|date:"Y"}}">next year&rarr;</a></p>
+
+    {% show_year event_list year %}
+</div>
+
+<div class="grid_4 last">
+
+</div>
+{% endblock %}

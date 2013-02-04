@@ -1,0 +1,14 @@
+{% extends "eventy/base.html" %}
+{% load humanize gencal %}
+
+{% block body %}
+<h2>Events</h2>
+<h3>Our calendars</h3>
+{% for cal in calendar_list %}
+<dl>
+    <dt><a href="{{cal.get_absolute_url}}">{{cal}}</a></dt>
+    <dd>{{cal.description}}</dd>
+</dl>
+{% endfor %}
+
+{% endblock %}

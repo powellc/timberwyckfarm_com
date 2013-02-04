@@ -1,0 +1,19 @@
+{% extends "eventy/base.html" %}
+{% load eventy_tags humanize typogrify markup %}
+
+{% block body %}
+<div class="grid_12 last">
+    <h2>Events in {{month|date:"F"}} {{month.year}}</h2>
+</div>
+
+<div class="grid_12">
+    <p class="prev"><a href="{% url ev-events-month year=prev_date.year month=prev_month_str %}" alt="View events from {{prev_date|date:"M"}}">&larr; previous month</a></p>
+    <p class="next"><a href="{% url ev-events-month year=next_date.year month=next_month_str %}" alt="View events from {{next_date|date:"M"}}">next month &rarr;</a></p>
+
+    {% show_month event_list month %}
+</div>
+
+<div class="grid_4 last">
+
+</div>
+{% endblock %}
