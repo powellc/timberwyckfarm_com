@@ -9,7 +9,7 @@ a img { text-decoration:none; border:2px solid #444; }
 h2 { letter-spacing:-1px;}
 #logo { margin-top:3em; padding:0; width:500px; height:140px; background: url(../img/logo.png) no-repeat; text-indent: -9999px;}
 
-#menu { font-size: 1.1em; margin-top:0; padding-top:0; border-bottom:3px solid #444; padding-bottom:6px; margin-bottom:0}
+#menu { font-size: 1.1em; letter-spacing:-1px; margin-top:0; padding-top:0; border-bottom:3px solid #444; padding-bottom:6px; margin-bottom:0}
 #menu li { list-style:none; display:inline; }
 #menu a { display:inline; padding:8px 8px 6px 8px; margin-bottom:8px;font-weight:bold; text-transform:uppercase; font-style:none;}
 #menu a:first { padding-left:0; }

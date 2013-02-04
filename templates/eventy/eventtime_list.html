@@ -1,0 +1,22 @@
+{% extends "eventy/base.html" %}
+{% load humanize typogrify_tags markup eventy_tags %}
+{% block title %}Events at {% endblock %}
+
+{% block content %}
+<div class="grid_8 prefix_2 suffix_2">
+<h2>Events</h2>
+
+{% for event in event_list|dictsort:"start" %}
+<dl class="vevent">
+  <dt>{{event}}</dt>
+  <dd class="date">{{event.start|naturalday}}</dd>
+  <dd class="time">{{event.start|date:"f a"}}</dd>
+  <dd class="detail">{{event.event.description|markdown|typogrify}}</dd>
+  <dd class="detail">{{event.notes|markdown|typogrify}}</dd>
+  <dd class="alt">{{event.event.calendar}}</dd>
+</dl>
+{% endfor %}
+    <h3>{% now "F Y" %}</h3>
+    {% show_month event_list '' 'small' %}
+</div>
+{% endblock %}

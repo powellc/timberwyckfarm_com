@@ -1,0 +1,23 @@
+{% extends 'notes/base.html' %}
+{% load humanize typogrify_tags %}
+{% block title %}{{object.date}} | Note{% endblock %}
+{% block meta-keywords %}note {{object.topic}}{% endblock %}
+{% block meta-description %}{{object.content}}{% endblock %}
+
+{% block content %}
+
+<div class="grid_8 prefix_2 suffix_2">
+<h2>Note</h2>
+{% if object.content_object %}<p><em>This note is in refernce to <a href="{{ object.content_object.get_absolute_url }}">{{object.content_object}}</a></em></p>{% endif %}
+
+<dl>
+  <dt><a href="{{object.get_absolute_url}}">{{object.date}}</a></dt>
+  <dd>{{object.rendered_content|safe}}</dd>
+  <dd><em>In {{object.topic}}</em></dd>
+</dl>
+
+{% if user.is_authenticated %}<p><a class="button" href="{% url notes-edit object.pk %}">Edit this note</a></p>{% endif %}
+<p><a class="button" href="{% url notes-index %}">Back to note list</a></p>
+</div>
+
+{% endblock %}

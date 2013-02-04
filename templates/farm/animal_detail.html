@@ -1,8 +1,9 @@
 {% extends 'farm/base.html' %}
 {% load humanize typogrify_tags truncatechars note_tags farm_tags %}
-{% block title %}{{object.name}} | Animals {% endblock %}
+{% block title %}{{object.name}} | Animals at {% endblock %}
 
 {% block extra-head %}
+{{block.super}}
 <script type="text/javascript">
 $(document).ready(function(){
 	
@@ -99,9 +100,9 @@ $(document).ready(function(){
             {% endfor %}
 <!-- AddThis Button BEGIN -->
 <li class="addthis">
-    <script type="application/javascript">var addthis_pub="{{ article.addthis_username }}";</script>
+    <script type="application/javascript">var addthis_pub="powellc";</script>
     <a href="http://www.addthis.com/bookmark.php?v=20" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s7.addthis.com/static/btn/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a>
-    <script type="application/javascript" src="http://s7.addthis.com/js/200/addthis_widget.js"></script>
+    <script type="application/javascript" src="http://s7.addthis.com/js/200/addthis_widget.js#pubid=ra-4f3a8ab14e35cd03"></script>
 </li>
 <!-- AddThis Button END -->
         </ul>

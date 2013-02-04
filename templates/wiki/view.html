@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="grid_8 prefix_2 suffix_2">
-  <h2 class="wiki-header"><a href="{% url wiki-index %}">TimberWiki</a></h2>
+  <h2 class="wiki-header"><a href="{% url wiki-index %}">TimberWyki</a></h2>
   <h3 class="right-ribbon title">{{page.name|de_camel_case}}</h3>
   <div class="clear"></div>
                         
@@ -44,10 +44,12 @@
         {% endif %}
         {% endif %}
 <br/>
+        {% if user.is_authenticated %}
         {% if page.id %}
                 <a class="btn primary" href="{% url wiki-edit-page page %}">Edit this page</a>
         {% else %}
                 <a class="btn primary" href="{% url wiki-edit-page page %}">Create this page</a>
+        {% endif %}
         {% endif %}
 </div>
 {% endblock %}

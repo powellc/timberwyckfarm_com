@@ -29,8 +29,10 @@
       {% if b.animal_set.all %}
       <ul class="animals">
           {% for a in b.animal_set.all %}
+	  {% if a.owner_farm.id == 1 %}
           {% if a.name %}
-          <li><a href="{{a.get_absolute_url}}">{{a.name}}</a>{% if a.deathday %}&nbsp;[D]{% endif %}</li>
+          <li>{% if a.deathday %}<strike>{% endif %}<a href="{{a.get_absolute_url}}">{{a.name}}</a>{% if a.deathday %}</strike>&nbsp;[D]{% endif %}</li>
+          {% endif %}
           {% endif %}
           {% endfor %}
       </ul>

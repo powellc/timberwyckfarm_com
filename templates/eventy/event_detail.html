@@ -1,0 +1,34 @@
+{% extends "eventy/base.html" %}
+{% load humanize typogrify markup %}
+
+{% block body %}
+<div class="grid_12 last">
+<h2>{{sermon.title}}</h2>
+<h2>Events</h2>
+</div>
+
+<div class="grid_8">
+    <h3>{{event}}</h3>
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e6c0f350ace61fb"></script>
+<!-- AddThis Button END -->
+    {{event.description|typogrify|markdown}}
+    {% for time in event.upcoming_event_times %}
+    <a rel="bookmark" href="{{time.get_absolute_url}}">
+        <abbr title="{{time.start|naturalday}}">{{time.start|date:"M"}}</abbr>{{time.start|date:"j"}}<sup>{{time.start|date:"S"}}</sup> <abbr>’{{time.start|date:"y"}}</abbr>
+	<sub>{{time.start|date:"f a"}}</sub></a>
+    {% endfor %}
+</div>
+
+<div class="grid_4 last">
+
+</div>
+{% endblock %}

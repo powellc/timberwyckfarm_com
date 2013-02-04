@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load humanize eventy_tags markup typogrify_tags %}
+
+{% block title %}{{event}} | Event at {% endblock %}
+
+{% block content %}
+<div class="grid_8 prefix_2 suffix_2">
+<h2>{{event}}</h2>
+<h3>{{event.start|naturalday}}</h3>
+<h3>{{event.start|date:"f a"}}{% if event.end %} until {{event.end|date:"f a"}}{% endif %}</h3>
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e6c0f350ace61fb"></script>
+<!-- AddThis Button END -->
+<p>At {{event.place}}</p>
+
+{{event.event.description|markdown|typogrify}}
+
+{{event.notes|markdown|typogrify}}
+
+<p><em>Part of our {{event.event.calendar}} calendar</em></p>
+
+</div>
+
+{% endblock %}

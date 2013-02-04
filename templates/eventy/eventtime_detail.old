@@ -1,0 +1,28 @@
+{% extends "eventy/base.html" %}
+{% load humanize typogrify markup eventy_tags %}
+
+{% block body %}
+<div class="grid_12 last">
+<h2>Events</h2>
+</div>
+
+<div class="grid_8">
+    <h3>{{object}}</h3>
+    <h4>{{object.start|naturalday}} @ {{object.start|time:"f a"}}{% if object.end.date != object.start.date %} - {{object.end|naturalday}} @ {{object.end|time:"f a"}}{% endif %}</h4>
+    {{object.notes|typogrify|markdown}}
+    {{object.event.description|typogrify|markdown}}
+
+</div>
+
+<div class="grid_4 last">
+
+    {% get_next_events 5 from object.event.calendar.slug as events %}
+
+    <h4>More from {{object.event.calendar}} calendar</h4>
+    {% for e in events %}
+    <p>{{e}}</p>
+    {% endfor %}
+    <p><a href="{% url ev-calendar-detail object.event.calendar.slug %}" alt="View {{object.event.calendar}} events">View the full calendar</a><p>
+
+</div>
+{% endblock %}
