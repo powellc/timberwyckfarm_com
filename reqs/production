@@ -19,7 +19,7 @@ psycopg2
 
 django-onec-utils==0.2.2
 django-farm==0.1.0
-django-notes==0.1.0
+django-notes==0.2.2
 gunicorn
 easy-thumbnails==1.1
 django-file-picker==0.5.0

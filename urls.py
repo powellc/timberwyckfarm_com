@@ -2,7 +2,7 @@ from django.conf.urls.defaults import *
 from django.conf import settings
 from django.views.static import serve
 from unipath import FSPath as Path
-from farm.models import Building, Field
+#from farm.models import Building, Field
 from django.views.generic import ListView, DetailView
 #from timberwyckfarm_com.sitemap import TWFSitemap
 
