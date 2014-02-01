@@ -1,17 +1,10 @@
-castinefarmersmarket_org
-========================
+timberwyckfarm_com
+===================
+
+The business website for Timberwyck Farm in Castine, Maine.
 
 Overview
 --------
 
-This is just the site project for the Castine Farmers Market website. 
-Much of it is a shell, with pluggable apps adding crucial features like 
-vendor registration and market schedule listing.
-
-Dependencies
-------------
-
-The site requires django-registration, django-vendors and 
-django-schedule
-
+Mostly a shell for a handful of nice reusable apps for Timberwyck Farm.  
 
