@@ -1,10 +1,8 @@
 # Django settings for timberwyckfarm_com project.
-import os
-import sys
-import warnings; warnings.simplefilter("ignore")
+import os, sys
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-PUBLIC_ROOT = os.path.join(DIRNAME, 'public')
+PUBLIC_ROOT = os.path.join(PROJECT_ROOT, 'public')
 
 MEDIA_ROOT = os.path.join(PUBLIC_ROOT, 'media/')
 MEDIA_URL = '/media/'
@@ -17,7 +15,7 @@ STATICFILES_FINDERS = (
 )
 
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_PATH, 'static_files'),
+    os.path.join(PROJECT_ROOT, 'static_files'),
 )
 
 DEBUG = True
@@ -109,45 +107,18 @@ INSTALLED_APPS = (
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'root': {
-        'level': 'DEBUG',
-        'handlers': ['email_admins'],
-    }
     'handlers': {
         'mail_admins': {
             'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler'
-        },
-        'null': {
-            'level': 'DEBUG',
-            'class':'django.utils.log.NullHandler',
-        },
-        #'sentry': {
-        #    'level': 'DEBUG',
-        #    'class': 'raven.contrib.django.handlers.SentryHandler',
-        #},
+            'class': 'django.utils.log.AdminEmailHandler',
+        }
     },
     'loggers': {
-        #'django': {
-        #    'handlers': ['sentry'],
-        #    'level': 'ERROR',
-        #    'propagate': False,
-        #},
         'django.request': {
             'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,
-        },
-        #'django.request': {
-        #    'handlers': ['sentry'],
-        #    'level': 'DEBUG',
-        #    'propagate': True,
-        #},
-        #'django.db.backends': {
-        #    'handlers': ['sentry'],
-        #    'propagate': False,
-        #    'level':'ERROR',
-        #},
+        }
     }
 }
 

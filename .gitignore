@@ -10,3 +10,9 @@ notes
 onec_utils
 attributes
 media/photologue
+venv
+dist
+build
+*.egg-info
+timberwyckfarm_com/local_settings.py
+houston

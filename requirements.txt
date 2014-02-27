@@ -2,8 +2,7 @@ Django==1.6.1
 Markdown==2.0.3
 Pillow==2.0.0
 South==0.8.4
-Unipath==0.2.1
-django-articles==2.1.1
+django-articles==2.4.1
 django-debug-toolbar==0.8.4
 django-extensions==0.6
 django-markup-mixin==0.1.0
@@ -17,7 +16,7 @@ django-attributes==0.1.0
 psycopg2==2.4.3
 
 django-onec-utils==0.2.2
-django-farm==0.1.0
+django-farm==0.4.2
 django-notes==0.2.2
 gunicorn==0.17.4
 easy-thumbnails==1.1
@@ -26,3 +25,4 @@ django-file-picker==0.5.0
 python-memcached
 django-typogrify==1.3
 typogrify==2.0.0
+django-markup==0.4
