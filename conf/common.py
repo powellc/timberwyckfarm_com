@@ -8,6 +8,7 @@ PROJECT_ROOT = os.path.dirname(os.path.realpath(os.path.dirname(__file__)))
 SITE_ROOT = os.path.dirname(PROJECT_ROOT)
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media/')
 
+USE_TZ=True
 VIRTUALENV='/var/lib/virtualenvs/twyck/lib/python2.5/site-packages'
 
 sys.path.append(SITE_ROOT)
@@ -52,7 +53,7 @@ LOGIN_REDIRECT_URL = '/'
 SECRET_KEY = 'v0%26bx!p-uv1lvj_kuvk%cz+8h=b&!l7il%z4vj)hu3@cow%s'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.auth',
+    'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.request',
     'django.core.context_processors.debug',
     'django.core.context_processors.media',
@@ -64,8 +65,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.middleware.csrf.CsrfResponseMiddleware',
     'onec_utils.middleware.SmartAppendSlashMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
 )
@@ -89,6 +90,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.sitemaps',
     'django.contrib.flatpages',
+    'django.contrib.messages',
 
     'django_extensions',
 #    'debug_toolbar',
@@ -100,6 +102,9 @@ INSTALLED_APPS = (
     'file_picker',
     'file_picker.uploads',
     'file_picker.wymeditor',
+    'filer',
+    'mptt',
+    'calendarium',
 
     'wiki',
     'articles',

@@ -22,6 +22,7 @@ DATABASES = {
 
 MEDIA_ROOT=os.path.join(PROJECT_ROOT, 'media/')
 MEDIA_URL = 'http://www.timberwyckfarm.com/media/'
+STATIC_URL = '/media/'
 ADMIN_MEDIA_PREFIX=MEDIA_URL+'admin/'
 
 TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, 'templates'),)

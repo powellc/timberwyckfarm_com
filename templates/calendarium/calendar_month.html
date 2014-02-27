@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n calendarium_tags %}
+{% load url from future %}
+
+{% block content %}
+<div id="" class="grid_8 prefix_2 suffix_2">
+<h1>{{ date|date:"F Y" }}</h1>
+<form action="." method="post">
+    {% csrf_token %}
+    <input type="submit" name="previous" value="{% trans "Previous" %}" />
+    <input type="submit" name="next" value="{% trans "Next" %}" />
+    <input type="submit" name="today" value="{% trans "Today" %}" />
+    {% if request.user.is_staff %}
+        <a href="{% url "calendar_event_create" %}">{% trans "Create new event" %}</a>
+    {% endif %}
+</form>
+<table id='calendar'>
+    <tr>
+        <th></th>
+        <th>{% trans "Monday" %}</td>
+        <th>{% trans "Tuesday" %}</td>
+        <th>{% trans "Wednesday" %}</td>
+        <th>{% trans "Thursday" %}</td>
+        <th>{% trans "Friday" %}</td>
+        <th>{% trans "Saturday" %}</td>
+        <th>{% trans "Sunday" %}</td>
+    </tr>
+    {% for week in month %}
+        {% if week %}
+            <tr>
+                <td class="week"><a href="{{ date|get_week_URL:week.0.0 }}">{% trans "View<br/>week" %}</a></td>
+                {% for day, occurrences, current in week %}
+                    <td>
+                        {% if day != 0 %}
+                            {% if current %}<strong>{% endif %}<a href="{% url "calendar_day" year=date|date:'Y' month=date|date:'m' day=day %}">{{ day }}</a>{% if current %}</strong>{% endif %}
+                            {% for occurrence in occurrences %}
+                                <p><a href="{{ occurrence.get_absolute_url }}">{{ occurrence }}</a></p>
+                            {% endfor %}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+{% render_upcoming_events 5 current_category %}
+{% include "calendarium/partials/category_list.html" %}
+</div>
+{% endblock %}

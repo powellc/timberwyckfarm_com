@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block content %}
+<div class="grid_8 prefix_2 suffix_2">
+<h1>{{ object }}</h1>
+<p>{% trans "Start" %}: {{ object.start }}</p>
+<p>{% trans "End" %}: {{ object.end }}</p>
+<p>{% trans "Description" %}: {{ object.description}}</p>
+<a href="javascript:history.back();">{% trans "back" %}</a>
+{% if request.user.is_staff %}
+    <a href="{% url "calendar_occurrence_update" pk=object.event.pk year=object.start.year month=object.start.month day=object.start.day %}">{% trans "Edit" %}</a>
+    <a href="{% url "calendar_occurrence_delete" pk=object.event.pk year=object.start.year month=object.start.month day=object.start.day %}">{% trans "Delete" %}</a>
+{% endif %}
+</div>
+{% endblock %}
+

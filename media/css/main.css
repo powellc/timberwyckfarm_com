@@ -3,7 +3,7 @@ body { font-family:'Merriweather', 'Georgia', serif; font-size:0.9em; color:#000
 .alt { color:#aaa; font-style:italic; font-size:0.8em; }
 a {color:#962020; -webkit-transition-property: background, #fff; -webkit-transition-duration: 0.25s, 0.25s; -webkit-transition-timing-function: linear, ease-in; -moz-transition-property: background, #fff; -moz-transition-duration: 0.25s, 0.25s; -moz-transition-timing-function: linear, ease-in; }
 a:hover { color:#555;}
-a:visited { color:maroon;}
+a:visited { color:#962020;}
 a img { text-decoration:none; border:2px solid #444; }
 
 h2 { letter-spacing:-1px;}
@@ -159,3 +159,54 @@ div.rotator ul li.show { z-index:500; }
 
 .wikipage-link { idth:100px; padding:10px; eight:100px; box-shadow:2px 2px 1px #555; margin:10px;float:left; border:1px solid #555; font-size:1.6em; overflow:none; font-weight:bold; }
 .wikipage-link a { text-decoration:none; }
+
+#calendar {
+	width: 141px;
+	padding: 0;
+	margin: 0;
+	border-left: 1px solid black;
+	background-color: #fff;
+}
+
+.nav, .nav a {
+	color: #fff;	
+	text-decoration: none;
+}	
+
+
+caption {
+	margin: 0;
+	padding: 0;
+	width: 141px;
+}
+
+th {
+        font-size:10pt;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+        width:100px;
+        min-width:72px;
+}
+
+.today, td.today a, td.today a:link, td.today a:visited {
+	font-weight: bold;
+}
+
+td {
+        font-size:16pt;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	width: 50px;
+	height: 70px;
+        vertical-align:top;
+}
+td a { color:#555; }
+td.week { font-size: 8pt; text-transform:uppercase; }
+td p { font-size:8pt; text-align:left; margin:0;}
+
+td a {
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+}

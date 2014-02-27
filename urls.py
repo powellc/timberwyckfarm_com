@@ -37,6 +37,7 @@ urlpatterns += patterns('',
 
     (r'^', include('farm.urls')),
     (r'^events/', include('eventy.urls')),
+    (r'^calendar/', include('calendarium.urls')),
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
     (r'^photos/', include('photologue.urls')),

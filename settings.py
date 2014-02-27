@@ -1,1 +1,1 @@
-from conf.development import *
+from conf.production import *
