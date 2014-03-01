@@ -12,3 +12,8 @@ attributes
 media/photologue
 media/filer
 media/movies
+build
+houston
+dist
+*.egg-info
+venv
