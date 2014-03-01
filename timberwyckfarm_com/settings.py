@@ -79,7 +79,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
-    'django.contrib.markup',
+    'django.contrib.messages',
     'django.contrib.humanize',
     'django.contrib.comments',
     'django.contrib.admindocs',
@@ -97,8 +97,6 @@ INSTALLED_APPS = (
     'file_picker.uploads',
     'file_picker.wymeditor',
 
-    'wiki',
-    'articles',
     'farm',
     'notes',
     'photologue',
