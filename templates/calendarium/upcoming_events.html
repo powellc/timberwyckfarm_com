@@ -1,3 +1,4 @@
+{% if occurrences %}
 {% for occurrence in occurrences %}
     <h3>{{occurrence.start|date:"l, F j"}}</h3>
     <h4>{{ occurrence.title }}</h4>
@@ -5,3 +6,6 @@
     <p>{{occurrence.event.description}}</p>
     {% if not forloop.last %}<hr />{% endif %}
 {% endfor %}
+{% else %}
+<p>There are no upcoming events for this month!</p>
+{% endif %}
