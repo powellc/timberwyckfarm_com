@@ -210,3 +210,5 @@ td a {
 	font-weight: bold;
 	display: block;
 }
+.today { text-align:center; }
+.next { float:right; }
