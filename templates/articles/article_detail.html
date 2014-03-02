@@ -6,9 +6,6 @@
 {% block meta-description %}{{ article.description|escape }}{% endblock %}
 {% block extra-head %}
 {{ block.super }}
-{% for tag in article.tags.all %}
-<link rel="alternate" type="application/rss+xml" title="Blog Articles Tagged '{{ tag.name }}' RSS Feed" href="{% url articles_feed tag.rss_name %}" />{% endfor %}
-{% endblock %}
 
 {% block content %}
 <div class="grid_8 prefix_2 suffix_2">
