@@ -1,4 +1,6 @@
 {% for occurrence in occurrences %}
-    {{ occurrence.event }}
-    {{occurrence.event.description}}
+    {% if not forloop.last %}<hr />{% endif %}
+    <h3>{{occurrence.start_time}}<h3>
+    <p>{{occurrence.start_time|time:"H:M"}} &mdash; {{ occurrence.event }}
+    <p>{{occurrence.event.description}}</p>
 {% endfor %}

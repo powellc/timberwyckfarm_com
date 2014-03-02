@@ -7,9 +7,9 @@
 <h1>{{ date|date:"F Y" }}</h1>
 <form action="." method="post">
     {% csrf_token %}
-    <input type="submit" name="previous" value="{% trans "Previous" %}" />
-    <input type="submit" name="next" value="{% trans "Next" %}" />
-    <input type="submit" name="today" value="{% trans "Today" %}" />
+    <input type="submit" class="previous" name="previous" value="{% trans "&larr; Previous month" %}" />
+    <input type="submit" class="next" name="next" value="{% trans "Next month &rarr;" %}" />
+    <input type="submit" class="today" name="today" value="{% trans "Today" %}" />
     {% if request.user.is_staff %}
         <a href="{% url "calendar_event_create" %}">{% trans "Create new event" %}</a>
     {% endif %}
@@ -17,13 +17,13 @@
 <table id='calendar'>
     <tr>
         <th></th>
-        <th>{% trans "Monday" %}</td>
-        <th>{% trans "Tuesday" %}</td>
-        <th>{% trans "Wednesday" %}</td>
-        <th>{% trans "Thursday" %}</td>
-        <th>{% trans "Friday" %}</td>
-        <th>{% trans "Saturday" %}</td>
-        <th>{% trans "Sunday" %}</td>
+        <th>{% trans "Mon" %}</td>
+        <th>{% trans "Tues" %}</td>
+        <th>{% trans "Wed" %}</td>
+        <th>{% trans "Thur" %}</td>
+        <th>{% trans "Fri" %}</td>
+        <th>{% trans "Sat" %}</td>
+        <th>{% trans "Sun" %}</td>
     </tr>
     {% for week in month %}
         {% if week %}
@@ -43,7 +43,7 @@
         {% endif %}
     {% endfor %}
 </table>
-{% render_upcoming_events 5 current_category %}
-{% include "calendarium/partials/category_list.html" %}
+<h2>Upcoming Events</h2>
+{% render_upcoming_events month=date.month %}
 </div>
 {% endblock %}
