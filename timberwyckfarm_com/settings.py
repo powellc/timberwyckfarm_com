@@ -1,5 +1,5 @@
 # Django settings for timberwyckfarm_com project.
-import os, sys
+import os
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 PUBLIC_ROOT = os.path.join(PROJECT_ROOT, 'public')
@@ -19,14 +19,13 @@ STATICFILES_DIRS = (
 )
 
 DEBUG = True
-TEMPLATE_DEBUG= DEBUG
 
 # Django settings for twyck project.
 ADMINS = (
     ('Colin Powell', 'colin.powell+twyck@gmail.com'),
 )
 
-USE_TZ = False  
+USE_TZ = True
 
 LANGUAGES = [
     ('en', 'English'),
@@ -37,16 +36,20 @@ MANAGERS = ADMINS
 USE_I18N = True
 
 TIME_ZONE = 'America/New_York'
-SITE_ID = 1 
+SITE_ID = 1
 
-AUTH_PROFILE_MODULE='profiles.UserProfile'        
+AUTH_PROFILE_MODULE = 'profiles.UserProfile'
 
 LOGIN_REDIRECT_URL = '/'
 
 SECRET_KEY = 'lkjzx8*#IKJJKLSDKjsdfnmsl#h=b&!l7il%z4vj)hu3@cow%s'
 
+TEMPLATE_DIRS = (
+    PROJECT_ROOT + '/templates/'
+)
+
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.auth',
+    'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.request',
     'django.core.context_processors.debug',
     'django.core.context_processors.media',
@@ -58,16 +61,15 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.middleware.csrf.CsrfResponseMiddleware',
-    'onec_utils.middleware.SmartAppendSlashMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'timberwyckfarm_com.urls'
 
 #HAYSTACK_SITECONF='search_sites'
 #HAYSTACK_SEARCH_ENGINE='whoosh'
@@ -85,22 +87,24 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.sitemaps',
     'django.contrib.flatpages',
+    'django.contrib.staticfiles',
 
+    # Third-party apps
     'django_extensions',
     'debug_toolbar',
     'easy_thumbnails',
-    'onec_utils',
-    'markup_mixin',
     'typogrify',
+    'farmyard',
     'attributes',
-    'file_picker',
-    'file_picker.uploads',
-    'file_picker.wymeditor',
-
-    'farm',
-    'notes',
     'photologue',
- )
+    'foundation',
+    'filer',
+
+    # Project apps
+    'timberwyckfarm_com.apps.articles',
+    'timberwyckfarm_com.apps.notes',
+    'timberwyckfarm_com.apps.calendarium'
+)
 
 LOGGING = {
     'version': 1,

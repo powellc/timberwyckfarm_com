@@ -7,7 +7,7 @@
 
 <div class="grid_8 prefix_2 suffix_2">
 <h2>What's going on at the farm?</h2>
-<p><em>Note: for more periodic updates, be sure to check out our <a href="{% url notes-index %}">notes page</a>.</em></p>
+<p><em>Note: for more periodic updates, be sure to check out our <a href="{% url "notes-index" %}">notes page</a>.</em></p>
 <ul id="articles">
 {% for article in page_obj.object_list %}
 <h2 class="title">{% ifnotequal paginator.num_pages 1 %}, {% trans 'page' %} {{ page_obj.number }}{% endifnotequal %}</h2>

@@ -3,12 +3,12 @@
 {% block body-class %}ed{% endblock %}
 {% block title %}Education{% endblock %}
 
-{% load typogrify_tags markup %}
+{% load typogrify_tags %}
 {% block content %}
 <div class="flatpage grid_8 prefix_2 suffix_2">
 <h2>{{flatpage.title}}</h2>
 
-{{flatpage.content|markdown|typogrify}}
+{{flatpage.content}}
 
 </div>
 {% endblock content %}
