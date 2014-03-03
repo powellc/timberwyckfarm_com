@@ -10,11 +10,9 @@
 <link rel="alternate" type="application/rss+xml" title="Blog Articles Tagged '{{ tag.name }}' RSS Feed" href="{% url articles_feed tag.rss_name %}" />{% endfor %}
 {% endblock %}
 
-{% block content %}
-<div class="grid_8 prefix_2 suffix_2">
+{% block articles-content %}
     {% include 'articles/_article_content.html' %}
     {% include 'articles/_meta.html' %}
     {% include 'articles/_comments.html' %}
-</div>
 
 {% endblock %}

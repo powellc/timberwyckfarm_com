@@ -1,4 +1,4 @@
-{% load foundation_tags %}
+{% load foundation_tags staticfiles %}
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -22,7 +22,9 @@
     {% endblock foundation_css %}  
     
     {# Custom CSS #}
-    {% block css %}{% endblock css %}
+    {% block css %}
+    <link rel="stylesheet" media="all" href="{% static "css/main.css" %}"/>
+    {% endblock css %}
 
     {# Override if you need another version of modernizr #}
     {% block foundation_modernizer %}
@@ -39,7 +41,7 @@
    <!-- Header and Nav -->
     <div class="row">
       <div class="large-3 columns">
-        <h1><img src="http://placehold.it/400x100&text=Logo"></h1>
+          <h1><img src="{% static "img/logo.png" %}"></h1>
       </div>
       <div class="large-9 columns">
         <ul class="button-group right">

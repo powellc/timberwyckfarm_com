@@ -5,37 +5,13 @@
   <h6>Written by <a href="#">{{article.author}}</a> on {{ article.publish_date|date:"j M, Y" }}.</h6>
 
   <div class="row">
-    <div class="large-6 columns">
-      {{ article.content|safe }}
-    </div>
-    <div class="large-6 columns">
       {% for att in article.attachments.all %}
       {% if forloop.first %}
-        {% if att.content_type_class == "image_png" %}<img src="{{att.attachment.url}}" />{% endif %}
-        {% if att.content_type_class == "image_jpeg" %}<img src="{% thumbnail att.attachment 400x240 %}" />{% endif %}
+        {% if att.content_type_class == "image_png" %}<img class="right" src="{{att.attachment.url}}" />{% endif %}
+        {% if att.content_type_class == "image_jpeg" %}<img class="right" src="{% thumbnail att.attachment 400x240 %}" />{% endif %}
       {% endif %}
       {% endfor %}
-    </div>
+      {{ article.content|safe }}
   </div>
 
-
-   <div id="article-tags">
-     <p class="tags">Read more: {% if article.tags.count %}{% for tag in article.tags.all %}<a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a> {% endfor %}{% else %}None{% endif %}</p>
-   </div>
-   <div id="article-nav" class="article-nav">
-       {% if article.get_next_article %}
-       <p class="nav" id="next-article">
-           <strong>{% trans 'Next' %}</strong>:
-           <a href="{{ article.get_next_article.get_absolute_url }}">{{ article.get_next_article.title }}</a>
-       </p>
-       {% endif %}
-   
-       {% if article.get_previous_article %}
-       <p class="nav" id="prev-article">
-           <strong>{% trans 'Previous' %}</strong>:
-           <a href="{{ article.get_previous_article.get_absolute_url }}">{{ article.get_previous_article.title }}</a>
-       </p>
-       {% endif %}
-   </div>
-   
 </article>

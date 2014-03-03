@@ -75,6 +75,20 @@ ROOT_URLCONF = 'timberwyckfarm_com.urls'
 #HAYSTACK_SEARCH_ENGINE='whoosh'
 #HAYSTACK_WHOOSH_PATH=os.path.join(PROJECT_ROOT, 'search-index')
 
+CKEDITOR_UPLOAD_PATH = MEDIA_ROOT + "uploads/"
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'config.language': 'en',
+        'config.uiColor': '#AADC6E',
+        'toolbar': 'Full',
+        'height': 300,
+        'width': 800,
+        'forcePasteAsPlainText': 'true',
+    },
+}
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -90,6 +104,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Third-party apps
+    'ckeditor',
     'django_extensions',
     'debug_toolbar',
     'easy_thumbnails',
@@ -103,7 +118,8 @@ INSTALLED_APPS = (
     # Project apps
     'timberwyckfarm_com.apps.articles',
     'timberwyckfarm_com.apps.notes',
-    'timberwyckfarm_com.apps.calendarium'
+    'timberwyckfarm_com.apps.calendarium',
+    'timberwyckfarm_com.apps.flatpages_plus',
 )
 
 LOGGING = {

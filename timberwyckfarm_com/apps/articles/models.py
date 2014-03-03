@@ -13,6 +13,7 @@ from django.core.cache import cache
 from django.conf import settings
 from django.template.defaultfilters import slugify, striptags
 from django.utils.translation import ugettext_lazy as _
+from ckeditor.fields import RichTextField
 
 from decorators import logtime, once_per_instance
 
@@ -165,7 +166,7 @@ class Article(models.Model):
     description = models.TextField(blank=True, help_text=_("If omitted, the description will be determined by the first bit of the article's content."))
 
     markup = models.CharField(max_length=1, blank=True, null=True)
-    content = models.TextField()
+    content = RichTextField()
     rendered_content = models.TextField()
 
     tags = models.ManyToManyField(Tag, help_text=_('Tags that describe this article'), blank=True)
