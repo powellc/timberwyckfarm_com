@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 
-{% block body-class %}ed{% endblock %}
 {% block title %}Education{% endblock %}
 
 {% load typogrify_tags %}
 {% block content %}
-<div class="flatpage grid_8 prefix_2 suffix_2">
-<h2>{{flatpage.title}}</h2>
+ <!-- Main Page Content and Sidebar -->
 
-{{flatpage.content}}
+  <div class="row">
 
-</div>
+    <!-- Main Page Content -->
+    <div class="large-9 columns" role="content">
+        <h2>{{flatpage.title}}</h2>
+        
+        {{flatpage.content|safe}}
+    </div>
+  </div>
 {% endblock content %}

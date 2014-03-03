@@ -1,48 +1,43 @@
-{% load i18n humanize thumbnail %}
-<div id="article-content" class="article">
-    <h2 class="title">{% trans article.title %}</h2>
-    <h3 class="dateline">{{ article.publish_date|naturalday }}</h3>
+{% load i18n thumbnail %}
+<article>
 
-{% for att in article.attachments.all %}
-	{% if att.content_type_class == "image_png" %}
-	<p id="attachement-{{forloop.counter}}" class="attachment ct_{{ att.content_type_class }}">
-	<img src="{{att.attachment.url}}" />
-    </p>
-    {% else %}
-	{% if att.content_type_class == "image_jpeg" %}
-	<p id="attachement-{{forloop.counter}}" class="attachment ct_{{ att.content_type_class }}">
-    <a href="{{att.attachment.url }}"><img src="{% thumbnail att.attachment 620x0 %}" /></a>
-    </p>
-    {% endif %}
-    {% endif %}
-{% endfor %}
+  <h3><a href="#">{% trans article.title %}</a></h3>
+  <h6>Written by <a href="#">{{article.author}}</a> on {{ article.publish_date|date:"j M, Y" }}.</h6>
 
-    {{ article.rendered_content|safe }}
-</div>
-{% if article.use_addthis_button and article.addthis_username %}
-<!-- AddThis Button BEGIN -->
-<div class="addthis">
-    <script type="application/javascript">var addthis_pub="{{ article.addthis_username }}";</script>
-    <a href="http://www.addthis.com/bookmark.php?v=20" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s7.addthis.com/static/btn/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a>
-    <script type="application/javascript" src="http://s7.addthis.com/js/200/addthis_widget.js"></script>
-</div>
-<!-- AddThis Button END -->
-{% endif %}
-<div id="article-tags">
-	<h4 class="tags">Read more: {% if article.tags.count %}{% for tag in article.tags.all %}<a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a> {% endfor %}{% else %}None{% endif %}</h4>
-</div>
-<div id="article-nav" class="article-nav">
-    {% if article.get_next_article %}
-    <p class="nav" id="next-article">
-        <strong>{% trans 'Next' %}</strong>:
-        <a href="{{ article.get_next_article.get_absolute_url }}">{{ article.get_next_article.title }}</a>
-    </p>
-    {% endif %}
+  <div class="row">
+    <div class="large-6 columns">
+      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
+      <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
+    </div>
+    <div class="large-6 columns">
+      {% for att in article.attachments.all %}
+      {% if forloop.first %}
+        {% if att.content_type_class == "image_png" %}<img src="{{att.attachment.url}}" />{% endif %}
+        {% if att.content_type_class == "image_jpeg" %}<img src="{% thumbnail att.attachment 400x240 %}" />{% endif %}
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
 
-    {% if article.get_previous_article %}
-    <p class="nav" id="prev-article">
-        <strong>{% trans 'Previous' %}</strong>:
-        <a href="{{ article.get_previous_article.get_absolute_url }}">{{ article.get_previous_article.title }}</a>
-    </p>
-    {% endif %}
-</div>
+  {{ article.content|safe }}
+
+   <div id="article-tags">
+     <p class="tags">Read more: {% if article.tags.count %}{% for tag in article.tags.all %}<a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a> {% endfor %}{% else %}None{% endif %}</p>
+   </div>
+   <div id="article-nav" class="article-nav">
+       {% if article.get_next_article %}
+       <p class="nav" id="next-article">
+           <strong>{% trans 'Next' %}</strong>:
+           <a href="{{ article.get_next_article.get_absolute_url }}">{{ article.get_next_article.title }}</a>
+       </p>
+       {% endif %}
+   
+       {% if article.get_previous_article %}
+       <p class="nav" id="prev-article">
+           <strong>{% trans 'Previous' %}</strong>:
+           <a href="{{ article.get_previous_article.get_absolute_url }}">{{ article.get_previous_article.title }}</a>
+       </p>
+       {% endif %}
+   </div>
+   
+</article>
