@@ -5,9 +5,6 @@ myutils
 *.sqlite
 *.swo
 attach
-farm
-notes
-onec_utils
 attributes
 media/photologue
 venv
