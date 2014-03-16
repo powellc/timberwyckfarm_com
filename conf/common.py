@@ -105,6 +105,7 @@ INSTALLED_APPS = (
     'filer',
     'mptt',
     'calendarium',
+    'resources',
 
     'wiki',
     'articles',
