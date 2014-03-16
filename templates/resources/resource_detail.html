@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="" class="grid_8 prefix_2 suffix_2">
+    <h2>{{object.title}} | Resource</h2>
+
+    <p>{{object.description|safe}}</p>
+
+    <object data="{{object.resource_file.url}}" type="application/pdf" width="100%" height="100%">
+ 
+      <p>It appears you don't have a PDF plugin for this browser.
+       No biggie... you can <a href="{{object.resource_file.url}}">click here to download the PDF file.</a></p>
+    </object>
+
+    <p>Added: {{object.created|date:"Y m d"}}</p>
+    <p>Last updated: {{object.modified|date:"Y m d"}}</p>
+    <p><a href="{{resource.resource_file.url}}">Download</a></p>
+</div>
+
+{% endblock %}
