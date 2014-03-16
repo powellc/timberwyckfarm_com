@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="" class="grid_8 prefix_2 suffix_2">
+    <h2>Resources</h2>
+
+    <p></p>
+
+    {% if object_list %}
+    {% for resource in object_list %}
+    <dl class="resource">
+      <dt><a href="{{resource.get_absolute_url}}">{{resource.title}}</a></dt>
+      {% if resource.description %}<dd>{{resource.description|safe}}</dd>{% endif %}
+      <dd>Last updated: {{resource.modified|date:"Y m d"}}
+      <dd><a href="{{resource.resource_file.url}}">Download now</a></dd>
+    </dl>
+    {% endfor %}
+    {% else %}
+    <p>We don't have any resources available at the moment.</p>
+    {% endif %}
+</div>
+
+{% endblock %}
