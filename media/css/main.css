@@ -209,6 +209,7 @@ calendar td a { color:#555; }
 	text-decoration: none;
 	font-weight: bold;
 	display: block;
+    font-size:8pt;
 }
 .today { text-align:center; }
 .next { float:right; }
