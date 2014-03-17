@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.core.urlresolvers import reverse
 from filer.fields.file import FilerFileField
 
 
@@ -24,3 +25,6 @@ class Resource(models.Model):
         ''' On save, update timestamps '''
         self.modified = datetime.today()
         return super(Resource, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('resource-detail', args=(self.slug,))
