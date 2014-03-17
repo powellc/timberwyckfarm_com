@@ -43,8 +43,9 @@
                 <li><a class="jr" href="{% url articles_archive %}" class="active">Journal</a></li>
                 <li><a class="am" href="{% url fm-genus-list %}">Animals</a></li>
                 <li><a class="pr" href="{% url fm-product-list %}">Products</a></li>
-                <li><a class="ed" href="{% url fl-education %}">Education</a></li>
-                <li><a class="ed" href="{% url calendar_current_month %}">Calendar</a></li>
+                <li><a class="ed" href="{% url fl-education %}">Farm Camp</a></li>
+                <li><a class="cl" href="{% url calendar_current_month %}">Calendar</a></li>
+                <li><a class="rs" href="{% url resource-list %}">Resources</a></li>
             </ul>
             {% block submenu %}{% endblock %}
         </div>
