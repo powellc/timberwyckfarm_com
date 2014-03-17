@@ -180,7 +180,7 @@ caption {
 	width: 141px;
 }
 
-th {
+#calendar th {
         font-size:10pt;
 	border-right: 1px solid black;
 	border-bottom: 1px solid black;
@@ -193,7 +193,7 @@ th {
 	font-weight: bold;
 }
 
-td {
+#calendar td {
         font-size:16pt;
 	border-right: 1px solid black;
 	border-bottom: 1px solid black;
@@ -201,11 +201,11 @@ td {
 	height: 70px;
         vertical-align:top;
 }
-td a { color:#555; }
-td.week { font-size: 8pt; text-transform:uppercase; }
-td p { font-size:8pt; text-align:left; margin:0;}
+calendar td a { color:#555; }
+#calendar td.week { font-size: 8pt; text-transform:uppercase; }
+#calender td p { font-size:8pt; text-align:left; margin:0;}
 
-td a {
+#calendar td a {
 	text-decoration: none;
 	font-weight: bold;
 	display: block;
